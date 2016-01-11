@@ -38,12 +38,12 @@ public class Battleship {
     // verifies guess values to actual location of ship
     public void check() {
 	if (!(_row > 0 && _row <= _size && _col > 0 && _col <= _size)) {
-	    System.out.println("Oops, not in the ocean! Try again!\n");
+	    System.out.println("Oops, not in the ocean!\n");
 	    return; // exit method
 	}
 
 	else if (_board.get(_row - 1, _col - 1).equals("X")) {
-	    System.out.println("You already guessed that! Try again!\n");
+	    System.out.println("You already guessed that!\n");
 	    return;
 	}
 
@@ -60,12 +60,7 @@ public class Battleship {
 
     // checks whether game has been completed with correct guess
     public boolean isGameOver() {
-	for (int r = 0; r < _size; r++) {
-	    for (int c = 0; c < _size; c++) {
-		if (_board.get(r,c).equals("H")) return true;
-	    }
-	}
-	return false;
+	return _board.contains("H");
     }
 
     public void play() {
