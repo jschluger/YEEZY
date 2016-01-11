@@ -48,16 +48,19 @@ public class Board {
 	return oldVal;
     }
 
+    // return specific row
     public Object[] getRow( int r ) {
 	return _board[r];
     }
 
+    // modify specific row, return old row
     public Object[] setRow( int r, Object[] newRow ) {
 	Object[] temp = getRow(r); // save old row
 	_board[r] = newRow;
 	return temp;
     }
 
+    // return specific column
     public Object[] getCol( int c ) {
 	Object[] retVal = new Object[size()];
 	for (int r = 0; r < size(); r++){
@@ -66,6 +69,7 @@ public class Board {
 	return retVal;
     }
 
+    // modify specific column, return old column
     public Object[] setCol( int c, Object[] newCol ) {
 	Object[] temp = getCol(c); // save old col
 	for (int r = 0; r < size(); r++){
@@ -74,7 +78,7 @@ public class Board {
 	return temp;
     }
 
-    
+    // transpose board
     public void transpose() {
 	Board temp = new Board(size());
 	// copy _board to temp to avoid aliasing
@@ -88,14 +92,14 @@ public class Board {
 	    setRow(i,temp.getCol(i)); // transpose
 	}
     } 
-    
+
+    // t/f if Object is present in _board
     public boolean contains( Object o ) {
 	for (int r = 0; r < size(); r++)
 	    for (int c = 0; c < size(); c++)
 		if ( o.equals(get(r,c)) ) return true; // true if equivalence found
 	return false;
     }
-
     
     // override toString()
     public String toString() {
@@ -108,4 +112,4 @@ public class Board {
 	}
 	return retStr;
     }
-}
+} // end class Board
