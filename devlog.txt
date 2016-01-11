@@ -16,7 +16,7 @@ Jack and Manish's . . .
 =========================================================
 2016-01-11:
 
-Jack: 
+Jack: Game interface complete
 
 Manish: Wrote Board Class and created/finished Battleship Class
 
