@@ -1,10 +1,12 @@
 /*====================================
   class Battleship - the classic Battleship game 
+
+  implements Game interface
   ====================================*/
 
 import cs1.Keyboard;
 
-public class Battleship {
+public class Battleship implements Game {
 
     private Board _board;
     private int _shipRow;
@@ -64,8 +66,6 @@ public class Battleship {
     }
 
     public void play() {
-	System.out.println("Welcome to BATTLESHIP, where you will try to sink my sole battleship in this vast sea! Be strategic and make wise decisions, or else fail miserably!\n");
-
 	while (_numTurns > 0) {
 	    System.out.print(_board);
 	    System.out.println("TURNS LEFT: " + _numTurns + "\n");
@@ -97,6 +97,8 @@ public class Battleship {
     }
 
     public static void main(String[] args) {
+        System.out.println("Welcome to BATTLESHIP, where you will try to sink my sole battleship in this vast sea! Be strategic and make wise decisions, or else fail miserably!\n");
+
 	Battleship game = new Battleship();
 	game.play();
     }
