@@ -37,14 +37,14 @@ public class Board {
 
     //return the item at the specified row & column
     // O(1)
-    private Object get( int r, int c ) {
+    public Object get( int r, int c ) {
 	return _board[r][c];
     } // O(1)   
 
       //overwrite item at specified row and column with newVal
     //return old value
     // O(1)
-    private Object set( int r, int c, Object newVal ) {
+    public Object set( int r, int c, Object newVal ) {
 	Object oldVal = get(r,c); // save oldVal
 	_board[r][c] = newVal;
 	return oldVal;
