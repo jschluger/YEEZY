@@ -21,6 +21,11 @@ public class Board {
 	_size = a;
     }
 
+    // return size
+    public int size() {
+	return _size;
+    }
+    
     // each point populated
     public void populate(Object a) {
 	for (int r = 0; r < _size; r++) {
