@@ -1,4 +1,4 @@
-jack and manish's . . . 
+Jack and Manish's . . . 
 
        /$$                      /$$                    
       | $$                     | $$                    
@@ -13,13 +13,12 @@ jack and manish's . . .
                                               \______/ 
 
 
-(copy the first one every day to keep the format)
 =========================================================
-2016-01-00:
+2016-01-11:
 
-Jack:
+Jack: 
 
-Manish:
+Manish: Wrote Board Class and created/finished Battleship Class
 
 =========================================================
 2016-01-12:
