@@ -34,6 +34,7 @@ public class Board {
     // get value at specified coordinate
     public Object get(int r, int c) {
 	return _board[r][c];
+    }
     
     // each point populated
     public void populate(Object a) {
@@ -49,7 +50,7 @@ public class Board {
 	String retStr = "";
 	for (Object[] row : _board) {
 	    for (Object a : row) {
-	        retStr += a + "\t";
+		retStr += a + "\t";
 	    }
 	    retStr += "\n\n";
 	}
