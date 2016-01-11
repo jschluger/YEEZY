@@ -25,6 +25,15 @@ public class Board {
     public int size() {
 	return _size;
     }
+
+    // set specified coordinate to specified value
+    public void set(int r, int c, Object newVal) {
+	_board[r][c] = newVal;
+    }
+
+    // get value at specified coordinate
+    public Object get(int r, int c) {
+	return _board[r][c];
     
     // each point populated
     public void populate(Object a) {
