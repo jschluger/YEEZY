@@ -99,6 +99,8 @@ public class Battleship implements Game {
     public static void main(String[] args) {
         System.out.println("Welcome to BATTLESHIP, where you will try to sink my sole battleship in this vast sea! Be strategic and make wise decisions, or else fail miserably!\n");
 
+	System.out.println("INSTRUCTIONS\nYour goal is to sink my battleship. Enter integer values for the row and column you think my battleship is located in. You only have a set amount of turns, so be careful!\n");
+
 	Battleship game = new Battleship();
 	game.play();
     }
