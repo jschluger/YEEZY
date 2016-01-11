@@ -10,5 +10,5 @@ public interface Game {
     // returns true if the game is over, false otherwise
     boolean isGameOver();
 
-}
+} // end interface Game
     
