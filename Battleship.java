@@ -102,10 +102,5 @@ public class Battleship implements Game {
 	Battleship game = new Battleship();
 	game.play();
     }
-} // end class Battleship
-		
-	    
-	
-	    
-	    
-	
+} // end class Battleship	    
+
