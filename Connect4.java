@@ -52,7 +52,7 @@ public class Connect4 implements Game {
 	    return false;
 	}
 
-	return true; 
+	return true;
     }
 
     public boolean checkC() { // avoid text if computer player is choosing column
@@ -118,7 +118,7 @@ public class Connect4 implements Game {
 	}
 	
 	try {
-	    Thread.sleep(2000); // 1000 milliseconds is one second.
+	    Thread.sleep(1000); // 1000 milliseconds is one second.
 	}
 	catch(InterruptedException ex) {
 	    Thread.currentThread().interrupt();
