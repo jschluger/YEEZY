@@ -5,7 +5,7 @@
   ====================================*/ 
 
 public class Board {
-    public static final int DEFAULT_SIZE = 5;
+    private static final int DEFAULT_SIZE = 5;
     private int _size;
     private Object[][] _board;
 
