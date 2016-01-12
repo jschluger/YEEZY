@@ -106,7 +106,7 @@ public class Board {
 	String retStr = "";
 	for (Object[] row : _board) {
 	    for (Object a : row) {
-	        retStr += a + "\t";
+	        retStr += a + "    ";
 	    }
 	    retStr += "\n\n";
 	}
