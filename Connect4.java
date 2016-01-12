@@ -52,7 +52,7 @@ public class Connect4 implements Game {
 	    return false;
 	}
 
-	return true;
+	return true; 
     }
 
     public boolean checkC() { // avoid text if computer player is choosing column
