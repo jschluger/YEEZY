@@ -29,7 +29,7 @@ Jack:
 
 Manish:
 *Wrote Board Class
-*created/finished Battleship Class
+*completed Battleship with full functionality
 
 =========================================================
 2016-01-00:
