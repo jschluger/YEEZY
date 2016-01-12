@@ -65,7 +65,7 @@ public class T048 {
 			    _board.set(r, n, 0 );
 			    break;
 			}
-			else if (!_board.get(r, c).equals(0)) break;
+			else if (!_board.get(r, n).equals(0)) break;
 		    }
 		}
 	    }
@@ -112,7 +112,7 @@ public class T048 {
 			    _board.set(r, n, 0 );
 			    break;
 			}
-			else if (!_board.get(r, c).equals(0)) break;
+			else if (!_board.get(r, n).equals(0)) break;
 		    }
 		}
 	    }
@@ -158,7 +158,7 @@ public class T048 {
 			    _board.set(n, c, 0 );
 			    break;
 			}
-			else if (!_board.get(r, c).equals(0)) break;
+			else if (!_board.get(n, c).equals(0)) break;
 		    }
 		}
 	    }
@@ -207,7 +207,7 @@ public class T048 {
 			    _board.set(n, c, 0 );
 			    break;
 			}
-			else if (!_board.get(r, c).equals(0)) break;
+			else if (!_board.get(n, c).equals(0)) break;
 		    }
 		}
 	    }
