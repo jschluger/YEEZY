@@ -30,6 +30,22 @@ public class Connect4 implements Game {
 
     // looks for four in a row
     public boolean isGameOver() {
+	// HORIZONTAL CHECK ONLY
+	boolean retVal = true;
+	for (int r = 0; r < 8; r++) {
+	    for (int c = 0; c < 5; c++) {
+		retVal = true;
+		for (int n = c + 1; n < (c + 4); n++) {
+		    if ( !(_board.get(r,c).equals(_board.get(r,n))) || _board.get(r,c).equals("O") ) {
+			retVal = false;
+			break;
+		    }
+		}
+		if (retVal) {
+		    return retVal;
+		}
+	    }
+	}
 	return false;
     }
 
@@ -128,6 +144,11 @@ public class Connect4 implements Game {
 	// show output
 	System.out.println(_board);
 
+	// check if COM has beat you
+	if ( isGameOver() ) {
+	    System.out.println("I have beat you! Success awaits.");
+	}
+
 	// increment numTurn by 1
 	_numTurn++;
     }
@@ -138,14 +159,8 @@ public class Connect4 implements Game {
 	    playTurn();
 	}
 
-	// if game over with while loop, computer has beat you
-	if ( !isGameOver() ) {
-	    System.out.println("I have beat you! Success awaits.");
-	    return;
-	}
-
 	// stalemate only possible by COM
-	if ( !isBoardFull() ) {
+	if ( isBoardFull() ) {
 	    System.out.println("Stalemate.");
 	}
 	    
