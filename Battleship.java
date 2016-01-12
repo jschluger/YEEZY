@@ -104,5 +104,8 @@ public class Battleship implements Game {
 	Battleship game = new Battleship();
 	game.playGame();
     }
-    
+
+    public static void main(String[] args) {
+	play();
+    }
 } // end class Battleship
