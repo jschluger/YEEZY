@@ -41,14 +41,14 @@ public class Connect4 implements Game {
 
     // verifies user input to avoid errors
     public boolean checkH() {
-	// make sure 
+	// make sure in boundaries
 	if (! ((_col - 1) >= 0 && (_col - 1) < 8) ) {
 	    System.out.print("Out of boundaries! Try again... ");
 	    return false;
 	}
 
 	else if (!_board.get(0,_col-1).equals("O")) { // check first row to see if empty
-	    System.out.println("Cannot drop piece here! Try again... ");
+	    System.out.print("Cannot drop piece here! Try again... ");
 	    return false;
 	}
 
@@ -56,7 +56,7 @@ public class Connect4 implements Game {
     }
 
     public boolean checkC() { // avoid text if computer player is choosing column
-	// make sure 
+	// make sure in boundaries
 	if (! ((_col - 1) >= 0 && (_col - 1) < 8) ) {
 	    return false;
 	}
@@ -73,9 +73,10 @@ public class Connect4 implements Game {
 	// extract specified column
 	Object[] col = _board.getCol(_col - 1);
 	int x = 7;
-	for (int p = 7; p >= 0; p--) {
-	    if (!col[p].equals("O")) x--; // find first free spot
-	    else break;
+	for (; x >= 0; x--) {
+	    if (col[x].equals("O")) {
+		break;
+	    }
 	}
 	int dropPos = x;
 	col[dropPos] = piece;
@@ -99,12 +100,9 @@ public class Connect4 implements Game {
 	// show output
 	System.out.println("\n" + _board);
 	// check for end of game or stalemate
+	
 	if (isGameOver()) {
 	    System.out.println("Congratulations! You have beat me!\n");
-	    return;
-	}
-	if ( isBoardFull() ) {
-	    System.out.println("Stalemate.\n");
 	    return;
 	}
 	
@@ -116,28 +114,19 @@ public class Connect4 implements Game {
 	while (!checkC()) {
 	    _col = (int)(Math.random() * 8) + 1;
 	}
-	
+		/*
 	try {
 	    Thread.sleep(1000); // 1000 milliseconds is one second.
 	}
 	catch(InterruptedException ex) {
 	    Thread.currentThread().interrupt();
-	}
+	    }*/
 	
 	// drop piece
 	dropPiece(PIECE_2);
 	
 	// show output
 	System.out.println(_board);
-	// check for end of game or stalemate
-	if (isGameOver()) {
-	    System.out.println("Welp, I have defeated you!\n");
-	    return;
-	}
-	if ( isBoardFull() ) {
-	    System.out.println("Stalemate.\n");
-	    return;
-	}
 
 	// increment numTurn by 1
 	_numTurn++;
@@ -145,9 +134,21 @@ public class Connect4 implements Game {
 
     public void playGame() {
 	System.out.println(_board);
-	while ( !isGameOver() ) {
+	while ( !isGameOver() && !isBoardFull() ) {
 	    playTurn();
 	}
+
+	// if game over with while loop, computer has beat you
+	if ( !isGameOver() ) {
+	    System.out.println("I have beat you! Success awaits.");
+	    return;
+	}
+
+	// stalemate only possible by COM
+	if ( !isBoardFull() ) {
+	    System.out.println("Stalemate.");
+	}
+	    
     }
 
     public static void play() {
