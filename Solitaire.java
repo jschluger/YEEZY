@@ -69,13 +69,13 @@ public class Solitaire {
 	s = "d:\tDECK\n";
 	s += "n:\t" + topCard() + "\n\n";
 	for (int i = 0; i < _final.size(); i++) {
-	    s+= i + ":\t" + showPile( _final.get(i) );
-	}
+	    s+= i + ":\t" + showPile( _final.get(i) ) + "\n";
+	    }
 	s += "\n";
 	for (int i = 0; i < _piles.size(); i++) {
-	    s+= (i + 4) + ":\t" + showPile( _piles.get(i) );
+	    s+= (i + 4) + ":\t" + showPile( _piles.get(i) ) + "\n";
 	}
-	s+= "\t 0  1  2  3  4  5  6";
+	s+= "\t 0  1  2  3  4  5  6 \n";
 	return s;
     }
 
@@ -96,9 +96,19 @@ public class Solitaire {
 	return _deck.get( _currentPos );
     }
     
+    //deals one card, putting the prevously delt card back at the "bottom" of the deck
+    public void dealCard() {
+	topCard().flip();
+	_currentPos++;
+	if (_currentPos == _deck.size() ) _currentPos = 0;
+	topCard().flip();
+
+    }
+    
     //picks where the card you will move is
-    //returns selected pile
-    public Card pickOrigin() {
+    //returns int[] in the form {chosen pile, chosen card} if it is valid
+    //where pile cooresponds to the pile ##s as numbered on the board
+    public int[] pickOrigin() {
 	
 	System.out.println(this);	
 	System.out.print("move some cards from pile...: ");
@@ -111,30 +121,30 @@ public class Solitaire {
 
 	if (pile.equals("d")) {
 	    dealCard();
-	    System.out.println("\nDELT. PICK AGAIN!!: \n");
+	    System.out.println("\nDELT. PICK AGAIN!! \n");
 	    return pickOrigin();
 	}
-	else if ( pile.equals("n") ) return topCard();
+	else if ( pile.equals("n") ) return new int[] {-1,_currentPos};//topCard();
 
 	System.out.print(" ...card: ");
 	
 	int card = Keyboard.readInt();
 	
-	if ( pileI > 0 && pileI < 4 &&
+	if ( pileI >= 0 && pileI < 4 &&
 	     _final.get(pileI).size() > 0
 	     && card < _final.get(pileI).size()
-	     && card > 0 
+	     && card >= 0 
 	     && _final.get(pileI).get(card).getFaceUp()
 	     )
-	    return _final.get(pileI).get(card);
+	    return new int[] {pileI,card};//_final.get(pileI).get(card);
 	
-	else if ( pileI > 3 && pileI < 11 &&
+	else if ( pileI >= 4 && pileI < 11 &&
 		  _piles.get(pileI - 4).size() > 0
 		  && card < _piles.get(pileI - 4).size()
-		  && card > 0 
+		  && card >= 0 
 		  && _piles.get(pileI - 4).get(card).getFaceUp()
 		  )
-	    return _piles.get(pileI - 4).get( card);
+	    return new int[] {pileI,card};//_piles.get(pileI - 4).get( card);
 	
 	else {
 	    System.out.println("\nBAD CHOICE. PICK AGAIN: \n");
@@ -142,35 +152,137 @@ public class Solitaire {
 
 	}
     }
-    /*
-    //picks where you will move a chosen card too and moves it there
-    //first checking if it is a valid move
-    public void makeMove(Card choice) {
-	System.out.print("to the top of pile ...: ");
-	int location = Keyboard.readInt();
-	if dest = 
-	    
-	    if (isValidMove(Card choice, Card dest)) return;
-	*/
-    public void playTurn() {
-	//Card choice = pickOrigin() ;
-	//makeMove(choice)
-	System.out.println(pickOrigin());
+
+    //picks where you will move a chosen card to
+    //returns pile you have chosen, if it is valid
+    public int pickLocation() {
+
+	System.out.print("to the end of pile ...: ");
+	int pile = Keyboard.readInt();
 	
-    }
-    
-    //deals one card, putting the prevously delt card back at the "bottom" of the deck
-    public void dealCard() {
-	topCard().flip();
-	_currentPos++;
-	topCard().flip();
+	if (pile >= 0 && pile < 11)
+	    return pile;
+	
+	else {
+	    System.out.println("\nBAD CHOICE. PICK AGAIN: \n");
+	    return pickLocation(); 
+	}
 
     }
     
-    public static void main(String[] args) {
-	Solitaire s = new Solitaire();
+    //checks to see it moving Card choice ontop of dest is valid
+    public boolean isValidMove(int[] choice, int dest) {
+	Card origin;
+	Card destination;
+	if (choice[0] == -1) origin = _deck.get(_currentPos);
+	else if (choice[0] < 4) origin = _final.get( choice[0] ).get( choice[1] );
+	else origin = _piles.get( choice[0] - 4 ).get( choice[1] );
+
+	if (dest < 4){
+	    if ( _final.get(dest).size() > 0)
+		destination = _final.get(dest).get( _final.get(dest).size() - 1 );
+	    //only aces can move to empty final piles
+	    else return origin.getNum() == 1;
+	}
+	else {
+	    if ( _piles.get(dest - 4).size() > 0)
+		destination = _piles.get(dest - 4).get( _piles.get(dest - 4).size() - 1 );
+	    //any card can move to an empty pile
+	    else return true;
+ 	}
+
+	//to move to a final pile must be same suit and 1 higher
+	if (dest < 4)
+	    return destination.getSuit().equals( origin.getSuit() )
+		&& destination.getNum() == origin.getNum() - 1;
+	//to move to normal pile must be opposite color and 1 lower
+	else return !(destination.getColor().equals( origin.getColor() ))
+		 && destination.getNum() == origin.getNum() + 1;
 	
-	s.playTurn();
+    }
+
+    //moves card (and anything on top of it) to the designated pile
+    public void makeMove(int[] choice, int dest) {
+	
+	if (dest < 4){
+	    //dont have to account for moving from final to final bc wont happen bc of suits
+	    if (choice[0] > 0) {
+		for (int i = choice[1]; i < _piles.get(choice[0] - 4).size(); i++){
+		_final.get(dest).add( _piles.get(choice[0] - 4).get(choice[1]));
+		_piles.get(choice[0] - 4).remove(choice[1]);
+		}
+		if (choice[1] > 0 
+		    &&! _piles.get(choice[0] - 4).get(choice[1]-1).getFaceUp()
+		    ) _piles.get(choice[0] - 4).get(choice[1]-1).flip();
+		
+	    }
+	    else{ //comeing from the delt card
+		_final.get(dest).add(_deck.get(_currentPos));
+		_deck.remove(_currentPos);
+
+		if (_currentPos == 0) _currentPos = _deck.size() - 1;
+		else _currentPos--;//to go back to the prevous card
+
+		_deck.get(_currentPos).flip();
+	    }
+	    
+	}
+	else {
+	    if (choice[0] > 4) {
+		for (int i = choice[1]; i < _piles.get(choice[0] - 4).size(); i++){
+		    _piles.get(dest - 4).add( _piles.get(choice[0] - 4).get(choice[1]));
+		    _piles.get(choice[0] - 4).remove(choice[1]);
+		}
+		if (choice[1] > 0
+		    &&! _piles.get(choice[0] - 4).get(choice[1]-1).getFaceUp()
+		    ) _piles.get(choice[0] - 4).get(choice[1]-1).flip();
+		
+	    }
+	    else if (choice[0] > 0) {
+		for (int i = choice[1]; i < _piles.get(choice[0]).size(); i++){
+		    _piles.get(dest - 4).add( _piles.get(choice[0]).get(choice[1]));
+		    _piles.get(choice[0]).remove(choice[1]);
+		}
+		if (choice[1] > 0 
+		    &&! _piles.get(choice[0] - 4).get(choice[1]-1).getFaceUp()
+		    ) _piles.get(choice[0]).get(choice[1]-1).flip();
+
+	    }
+	    else{ //comeing from the delt card
+		_piles.get(dest - 4).add(_deck.get(_currentPos));
+		_deck.remove(_currentPos);
+
+		if (_currentPos == 0) _currentPos = _deck.size() - 1;
+		else _currentPos--;//to go back to the prevous card
+
+		_deck.get(_currentPos).flip();
+	    }
+	}
+    }
+
+    
+    //picks where you will move a chosen card too and moves it there
+    //first checking if it is a valid move
+    public void playTurn() {
+	int[] choice = pickOrigin();
+	int dest = pickLocation();
+	
+	if (isValidMove(choice, dest)) makeMove(choice, dest);
+	else System.out.println("\nNOT A VALID MOVE. TRY AGAIN: \n");
+    }
+    
+    public void playGame() {
+	while (true) playTurn();
+    }
+
+    public static void play() {
+	Solitaire s = new Solitaire();
+	s.playGame();
+    }
+
+    
+    public static void main(String[] args) {
+	Solitaire.play();
     }
 
 }//end class Solitaire
