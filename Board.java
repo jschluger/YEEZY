@@ -98,7 +98,7 @@ public class Board {
     // preconditional: from left or top border of board
     // postconditional: returns diagonal from point specified going downwards and right
     public Object[] getDiagDown( int row, int col ) {
-	int x = _board.size() - 1; 
+	int x = size() - 1; 
 	Object[] retArr = new Object[x - Math.abs(col-row) + 1];
 	int pos = 0;
 	int r = row;
