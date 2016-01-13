@@ -46,7 +46,7 @@ public class Solitaire {
 	for (int i = 0; i < 4; i++){
 	    _final.add( new ArrayList <Card>() );
 	}
-
+	
 	_currentPos = 0;
 	topCard().flip();
     }
