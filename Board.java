@@ -140,7 +140,7 @@ public class Board {
 	String retStr = "";
 	for (Object[] row : _board) {
 	    for (Object a : row) {
-	        retStr += a + "    ";
+	        retStr += a + "\t";
 	    }
 	    retStr += "\n\n";
 	}

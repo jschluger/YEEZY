@@ -222,9 +222,12 @@ public class Connect4 implements Game {
 	    System.out.println("Congratulations! You have beat me!\n");
 	    return;
 	}
+
+	// increment numTurn by 1
+	_numTurn++;
 	
 	// ======= COM TURN =======
-	System.out.println("Computer Turn #" + _numTurn + "\n");
+	System.out.println("COM thinking...\n");
 	_col = (int)(Math.random() * 8) + 1; // [1,8]
 
 	// similarly verify input
@@ -249,9 +252,6 @@ public class Connect4 implements Game {
 	if ( isGameOver() ) {
 	    System.out.println("I have beat you! Success awaits.");
 	}
-
-	// increment numTurn by 1
-	_numTurn++;
     }
 
     // simulate entire game from static context
