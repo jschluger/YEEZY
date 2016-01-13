@@ -256,6 +256,7 @@ public class Connect4 implements Game {
 
     // simulate entire game from static context
     public void playGame() {
+	displayInstructions();
 	System.out.println(_board);
 	while ( !isGameOver() && !isBoardFull() ) {
 	    playTurn();
