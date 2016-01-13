@@ -79,6 +79,9 @@ public class Solitaire {
 	return s;
     }
 
+    //returns the longest length subArrayList in an ArrayList, for printing purposes
+
+    
     //returns a string form of one pile
     public String showPile(ArrayList<Card> a) {
 	String s = "";
@@ -90,6 +93,8 @@ public class Solitaire {
 	s += "\n";
 	return s;
     }
+
+    
 
     //returns the card that has been delt
     public Card topCard() {
@@ -266,6 +271,14 @@ public class Solitaire {
 	}
     }
 
+    //sees if the game is over
+    public boolean isGameOver() {
+	for (int i = 0; i < _final.size(); i++) {
+	    if (_final.get(i).size() < 13) return false;
+	}
+	return true;
+	
+    }
     
     //picks where you will move a chosen card too and moves it there
     //first checking if it is a valid move
@@ -278,7 +291,7 @@ public class Solitaire {
     }
     
     public void playGame() {
-	while (true) playTurn();
+	while (! isGameOver() ) playTurn();
     }
 
     public static void play() {
