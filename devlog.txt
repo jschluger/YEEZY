@@ -18,6 +18,8 @@ Jack and Manish's . . .
 Jack:
 
 Manish:
+*completed TicTacToe with full functionality
+*fixed formatting of Connect4
 
 =========================================================
 2016-01-12:
