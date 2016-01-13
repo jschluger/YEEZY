@@ -15,7 +15,7 @@ public class Connect4 implements Game {
     private int _numTurn; // to track turn number
     private int _col; // user input to drop piece
 
-    // default constructor: 8x8 board
+    // default constructor: 8x8 board, no customization
     public Connect4() {
 	_board = new Board(8);
 	_board.populate("O");
