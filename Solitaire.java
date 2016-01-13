@@ -26,15 +26,11 @@ public class Solitaire {
 	//populate the deck
 	String[] temp = {"H","D","S","C"};
 
-	//for testing purposes
-	for (int k = 0; k < 15;k++) { 
-	    
 	    for (String s : temp)
 		for (int n = 1; n <= 13; n++)
 		    _deck.add( new Card(s,n) );
 	    shuffle(_deck);
-	}
-	
+	    
 	
 	//set up the deck
 	for (int i = 0; i < 7; i++){
@@ -207,12 +203,11 @@ public class Solitaire {
 	Card destination;
 	if (choice[0] == -1) origin = _deck.get(_currentPos);
 	else if (choice[0] < 4) return false;/*{
-
 	    if (choice[1] < _final.get( choice[0] ).size() - 1) return false;
 	    else origin = _final.get( choice[0] ).get( choice[1] );
 	    }*/
 	else origin = _piles.get( choice[0] - 4 ).get( choice[1] );
-
+	
 	if (dest < 4){
 	    if ( _final.get(dest).size() > 0)
 		destination = _final.get(dest).get( _final.get(dest).size() - 1 );
@@ -222,8 +217,8 @@ public class Solitaire {
 	else {
 	    if ( _piles.get(dest - 4).size() > 0)
 		destination = _piles.get(dest - 4).get( _piles.get(dest - 4).size() - 1 );
-	    //any card can move to an empty pile
-	    else return true;
+	    //only kings can move to empty piles
+	    else return origin.getNum() == 13;
  	}
 
 	//to move to a final pile must be same suit and 1 higher
