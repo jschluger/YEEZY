@@ -30,23 +30,26 @@ public class Solitaire {
 		_deck.add( new Card(s,n) );
 	shuffle(_deck);
 
-	//set up the deck
-	for (int i = 0; i < 7; i++){
-	    _piles.add( new ArrayList <Card>() );
-	    //add this many cards and leave them face down
-	    for (int j = 0; j < i; j++){
+	//for testing purposes
+	for (int i = 0;i < 15;i++) { 
+	    //set up the deck
+	    for (int i = 0; i < 7; i++){
+		_piles.add( new ArrayList <Card>() );
+		//add this many cards and leave them face down
+		for (int j = 0; j < i; j++){
+		    _piles.get(i).add( _deck.get(0) );
+		    _deck.remove(0);
+		}
+		//add one more card flip it
 		_piles.get(i).add( _deck.get(0) );
+		_piles.get(i).get(i).flip();
 		_deck.remove(0);
 	    }
-	    //add one more card flip it
-	    _piles.get(i).add( _deck.get(0) );
-	    _piles.get(i).get(i).flip();
-	    _deck.remove(0);
+	    for (int i = 0; i < 4; i++){
+		_final.add( new ArrayList <Card>() );
+	    }
+
 	}
-	for (int i = 0; i < 4; i++){
-	    _final.add( new ArrayList <Card>() );
-	}
-	
 	_currentPos = 0;
 	topCard().flip();
     }
@@ -76,7 +79,7 @@ public class Solitaire {
 		else s+= "\t";
 	    }
 	    
-	    s += "\n\t\t\t";
+	    s += "\n\t\t\t\t";
 	}
 	s += "\n\n4\t5\t6\t7\t8\t9\t10\n";
 	for (int i = 0; i < longestSubArrayList(_piles); i++) {
@@ -87,7 +90,7 @@ public class Solitaire {
 	    }
 	    s += "\n";
 	}
-	
+	s+= "\n\n";
 	return s;
     }
 
@@ -199,7 +202,11 @@ public class Solitaire {
 	Card origin;
 	Card destination;
 	if (choice[0] == -1) origin = _deck.get(_currentPos);
-	else if (choice[0] < 4) origin = _final.get( choice[0] ).get( choice[1] );
+	else if (choice[0] < 4) return false;/*{
+
+	    if (choice[1] < _final.get( choice[0] ).size() - 1) return false;
+	    else origin = _final.get( choice[0] ).get( choice[1] );
+	    }*/
 	else origin = _piles.get( choice[0] - 4 ).get( choice[1] );
 
 	if (dest < 4){
