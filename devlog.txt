@@ -18,7 +18,7 @@ Jack and Manish's . . .
 Jack:
 
 Manish:
-*began Connect4
+*completed Connect4 with full functionality
 
 
 =========================================================
@@ -29,8 +29,8 @@ Jack:
 *played some 2048
 
 Manish:
-*Wrote Board Class
 *completed Battleship with full functionality
+*Wrote Board Class
 
 =========================================================
 2016-01-00:
