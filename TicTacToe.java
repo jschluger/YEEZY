@@ -8,6 +8,7 @@
 import cs1.Keyboard;
 
 public class TicTacToe implements Game {
+    
     private Board _board;
     private static final String PIECE_1 = "X";
     private static final String PIECE_2 = "O";

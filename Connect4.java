@@ -8,8 +8,9 @@
 import cs1.Keyboard;
 
 public class Connect4 implements Game {
+    
     private static final String PIECE_1 = "X";
-    private static final String PIECE_2 = "U";
+    private static final String PIECE_2 = "O";
 
     private Board _board;
     private int _numTurn; // to track turn number
@@ -18,14 +19,14 @@ public class Connect4 implements Game {
     // default constructor: 8x8 board, no customization
     public Connect4() {
 	_board = new Board(8);
-	_board.populate("O");
+	_board.populate("_");
 	_numTurn = 1;
 	_col = -1;
     }
 
     // to signify a stalemate
     public boolean isBoardFull() {
-	return (! (_board.contains("O") ));
+	return (! (_board.contains("_") ));
     }
 
     // HORIZONTAL CHECK
@@ -37,7 +38,7 @@ public class Connect4 implements Game {
 		for (int n = c + 1; n < (c + 4); n++) {
 		    // checks for equivalence with pieces horizontal (right) to it
 		    // makes sure they are not meaningless positions
-		    if ( !(_board.get(r,c).equals(_board.get(r,n)) ) || _board.get(r,c).equals("O") ) {
+		    if ( !(_board.get(r,c).equals(_board.get(r,n)) ) || _board.get(r,c).equals("_") ) {
 			retVal = false; // didn't pass test
 			break; // check next piece to the right
 		    }
@@ -58,7 +59,7 @@ public class Connect4 implements Game {
 		for (int n = c + 1; n < (c + 4); n++) {
 		    // checks for equivalence with pieces vertical (down) to it
 		    // makes sure they are not meaningless positions
-		    if ( !(_board.get(c,r).equals(_board.get(n,r)) ) || _board.get(c,r).equals("O") ) {
+		    if ( !(_board.get(c,r).equals(_board.get(n,r)) ) || _board.get(c,r).equals("_") ) {
 			retVal = false; // didn't pass test
 			break; // check next piece to the bottom
 		    }
@@ -79,7 +80,7 @@ public class Connect4 implements Game {
 	    for (int i = 0; i < diag.length - 3; i++) {
 		retVal = true;
 		for (int n = i + 1; n < (i + 4); n++) {
-		    if ( !diag[i].equals(diag[n]) || diag[i].equals("O") ) {
+		    if ( !diag[i].equals(diag[n]) || diag[i].equals("_") ) {
 			retVal = false; // didn't pass test
 			break; // check next piece in diagonal
 		    }
@@ -95,7 +96,7 @@ public class Connect4 implements Game {
 	    for (int i = 0; i < diag.length - 3; i++) {
 		retVal = true;
 		for (int n = i + 1; n < (i + 4); n++) {
-		    if ( !diag[i].equals(diag[n]) || diag[i].equals("O") ) {
+		    if ( !diag[i].equals(diag[n]) || diag[i].equals("_") ) {
 			retVal = false; // didn't pass test
 			break; // check next piece in diagonal
 		    }
@@ -116,7 +117,7 @@ public class Connect4 implements Game {
 	    for (int i = 0; i < diag.length - 3; i++) {
 		retVal = true;
 		for (int n = i + 1; n < (i + 4); n++) {
-		    if ( !diag[i].equals(diag[n]) || diag[i].equals("O") ) {
+		    if ( !diag[i].equals(diag[n]) || diag[i].equals("_") ) {
 			retVal = false; // didn't pass test
 			break; // check next piece in diagonal
 		    }
@@ -132,7 +133,7 @@ public class Connect4 implements Game {
 	    for (int i = 0; i < diag.length - 3; i++) {
 		retVal = true;
 		for (int n = i + 1; n < (i + 4); n++) {
-		    if ( !diag[i].equals(diag[n]) || diag[i].equals("O") ) {
+		    if ( !diag[i].equals(diag[n]) || diag[i].equals("_") ) {
 			retVal = false; // didn't pass test
 			break; // check next piece in diagonal
 		    }
@@ -162,7 +163,7 @@ public class Connect4 implements Game {
 	    return false;
 	}
 
-	else if (!_board.get(0,_col-1).equals("O")) { // check first row to see if empty
+	else if (!_board.get(0,_col-1).equals("_")) { // check first row to see if empty
 	    System.out.print("Cannot drop piece here! Try again... ");
 	    return false;
 	}
@@ -177,7 +178,7 @@ public class Connect4 implements Game {
 	    return false;
 	}
 
-	else if (!_board.get(0,_col-1).equals("O")) { // check first row to see if empty
+	else if (!_board.get(0,_col-1).equals("_")) { // check first row to see if empty
 	    return false;
 	}
 
@@ -190,7 +191,7 @@ public class Connect4 implements Game {
 	Object[] col = _board.getCol(_col - 1);
 	int x = 7;
 	for (; x >= 0; x--) {
-	    if (col[x].equals("O")) {
+	    if (col[x].equals("_")) {
 		break;
 	    }
 	}
