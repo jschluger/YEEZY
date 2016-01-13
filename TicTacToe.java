@@ -112,12 +112,12 @@ public class TicTacToe implements Game {
     public boolean checkH() {
 	// make sure in boundaries
 	if (! ((_col - 1) >= 0 && (_col - 1) < 3 && (_row - 1) >=0 && (_row - 1) < 3) ) {
-	    System.out.print("Out of boundaries! Try again... ");
+	    System.out.print("Out of boundaries! Try again...\n");
 	    return false;
 	}
 
 	else if (_board.get(_row-1,_col-1).equals("X") || _board.get(_row-1,_col-1).equals("O")) { // check if coordinate is filled
-	    System.out.print("Invalid! Try again... ");
+	    System.out.print("Invalid! Try again...\n");
 	    return false;
 	}
 
