@@ -203,11 +203,13 @@ public class Solitaire {
 
     //moves card (and anything on top of it) to the designated pile
     public void makeMove(int[] choice, int dest) {
-	
+	int size; //must use bc you cant recalculate the size every time bc it gets smaller with the .remove
+
 	if (dest < 4){
 	    //dont have to account for moving from final to final bc wont happen bc of suits
 	    if (choice[0] > 0) {
-		for (int i = choice[1]; i < _piles.get(choice[0] - 4).size(); i++){
+		size = _piles.get(choice[0] - 4).size();
+		for (int i = choice[1]; i < size; i++){
 		_final.get(dest).add( _piles.get(choice[0] - 4).get(choice[1]));
 		_piles.get(choice[0] - 4).remove(choice[1]);
 		}
@@ -228,8 +230,10 @@ public class Solitaire {
 	    
 	}
 	else {
-	    if (choice[0] > 4) {
-		for (int i = choice[1]; i < _piles.get(choice[0] - 4).size(); i++){
+	    if (choice[0] > 3) {
+
+		size = _piles.get(choice[0] - 4).size();
+		for (int i = choice[1]; i < size; i++){
 		    _piles.get(dest - 4).add( _piles.get(choice[0] - 4).get(choice[1]));
 		    _piles.get(choice[0] - 4).remove(choice[1]);
 		}
@@ -239,9 +243,11 @@ public class Solitaire {
 		
 	    }
 	    else if (choice[0] > 0) {
-		for (int i = choice[1]; i < _piles.get(choice[0]).size(); i++){
-		    _piles.get(dest - 4).add( _piles.get(choice[0]).get(choice[1]));
-		    _piles.get(choice[0]).remove(choice[1]);
+
+		size = _final.get(choice[0]).size();
+		for (int i = choice[1]; i < size; i++){
+		    _piles.get(dest - 4).add( _final.get(choice[0]).get(choice[1]));
+		    _final.get(choice[0]).remove(choice[1]);
 		}
 		if (choice[1] > 0 
 		    &&! _piles.get(choice[0] - 4).get(choice[1]-1).getFaceUp()
