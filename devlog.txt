@@ -16,6 +16,9 @@ Jack and Manish's . . .
 2016-01-12:
 
 Jack:
+*almost finished Solitaire, only problem is when trying to move piles of cards instead of individual cards
+*Wrote class Card to use in Solitaire, which can be used if we write and more card games
+
 
 Manish:
 *completed Connect4 with full functionality
