@@ -31,7 +31,6 @@ Manish:
 *completed Connect4 with full functionality
 *added methods to extract diagonals in Board class
 
-
 =========================================================
 2016-01-11:
 
