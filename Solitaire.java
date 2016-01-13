@@ -66,21 +66,40 @@ public class Solitaire {
     //toString
     public String toString() {
 	String s;
-	s = "d:\tDECK\n";
-	s += "n:\t" + topCard() + "\n\n";
-	for (int i = 0; i < _final.size(); i++) {
-	    s+= i + ":\t" + showPile( _final.get(i) ) + "\n";
+	s = "d:\tDECK\t\t\t0\t1\t2\t3\n";
+	s += "n:\t" + topCard() + "\t\t\t";
+	
+	for (int i = 0; i < longestSubArrayList(_final); i++) {
+	    //for each ArrayList<Card> in _final
+	    for (int j = 0; j < _final.size(); j++) {
+		if ( i < _final.get(j).size() ) s+= _final.get(j).get(i) + "\t"; 
+		else s+= "\t";
 	    }
-	s += "\n";
-	for (int i = 0; i < _piles.size(); i++) {
-	    s+= (i + 4) + ":\t" + showPile( _piles.get(i) ) + "\n";
+	    
+	    s += "\n\t\t\t";
 	}
-	s+= "\t 0  1  2  3  4  5  6 \n";
+	s += "\n\n4\t5\t6\t7\t8\t9\t10\n";
+	for (int i = 0; i < longestSubArrayList(_piles); i++) {
+	    //for each ArrayList<Card> in _final
+	    for (int j = 0; j < _piles.size(); j++) {
+		if ( i < _piles.get(j).size() ) s+= _piles.get(j).get(i) + "\t"; 
+		else s+= "\t";
+	    }
+	    s += "\n";
+	}
+	
 	return s;
     }
 
     //returns the longest length subArrayList in an ArrayList, for printing purposes
-
+    public int longestSubArrayList(ArrayList <ArrayList<Card>> a) {
+	int max = 0;
+	for (int i = 0; i < a.size(); i++) {
+	    if ( a.get(i).size() > max ) max = a.get(i).size();
+	}
+	return max;
+    }
+    
     
     //returns a string form of one pile
     public String showPile(ArrayList<Card> a) {
