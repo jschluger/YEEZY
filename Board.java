@@ -78,6 +78,39 @@ public class Board {
 	return temp;
     }
 
+    // preconditional: row > col, from left or bottom border of board
+    // postconditional: returns diagonal from point specified going upwards and right
+    public Object[] getDiagUp( int row, int col ) {
+	Object[] retArr = new Object[(row-col)+1];
+	int pos = 0;
+	int r = row;
+        int c = col;
+        while (row >= c && col <= r && pos < retArr.length) { // algo to find limits
+	    retArr[pos] = _board[row][col];
+	    row--;
+	    col++;
+	    pos++;
+	}
+	return retArr;
+    }
+    
+
+    // preconditional: from left or top border of board
+    // postconditional: returns diagonal from point specified going downwards and right
+    public Object[] getDiagDown( int row, int col ) {
+	Object[] retArr = new Object[7 - Math.abs(col-row) + 1];
+	int pos = 0;
+	int r = row;
+	int c = col;
+	while (row <= 7 - c && col <= 7 - r && pos < retArr.length) { // algo to find limits
+	    retArr[pos] = _board[row][col];
+	    row++;
+	    col++;
+	    pos++;
+	}
+	return retArr;
+    }
+
     // transpose board
     public void transpose() {
 	Board temp = new Board(size());

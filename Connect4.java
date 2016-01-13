@@ -28,25 +28,124 @@ public class Connect4 implements Game {
 	return (! (_board.contains("O") ));
     }
 
-    // looks for four in a row
-    public boolean isGameOver() {
-	// HORIZONTAL CHECK ONLY
+    // HORIZONTAL CHECK
+    public boolean winH() {
 	boolean retVal = true;
 	for (int r = 0; r < 8; r++) {
 	    for (int c = 0; c < 5; c++) {
 		retVal = true;
 		for (int n = c + 1; n < (c + 4); n++) {
-		    if ( !(_board.get(r,c).equals(_board.get(r,n))) || _board.get(r,c).equals("O") ) {
-			retVal = false;
-			break;
+		    // checks for equivalence with pieces horizontal (right) to it
+		    // makes sure they are not meaningless positions
+		    if ( !(_board.get(r,c).equals(_board.get(r,n)) ) || _board.get(r,c).equals("O") ) {
+			retVal = false; // didn't pass test
+			break; // check next piece to the right
 		    }
 		}
-		if (retVal) {
-		    return retVal;
-		}
+		// return true if retVal remains true after test of four consecutive pieces
+		if (retVal) return true;
 	    }
 	}
 	return false;
+    }
+    
+    // VERTICAL CHECK
+    public boolean winV() {
+	boolean retVal = true;
+	for (int r = 0; r < 8; r++) {
+	    for (int c = 0; c < 5; c++) {
+		retVal = true;
+		for (int n = c + 1; n < (c + 4); n++) {
+		    // checks for equivalence with pieces vertical (down) to it
+		    // makes sure they are not meaningless positions
+		    if ( !(_board.get(c,r).equals(_board.get(n,r)) ) || _board.get(c,r).equals("O") ) {
+			retVal = false; // didn't pass test
+			break; // check next piece to the bottom
+		    }
+		}
+		// return true if retVal remains true after test of four consecutive pieces
+		if (retVal) return true;
+	    }
+	}
+	return false;
+    }
+
+    // DIAGONAL CHECK RIGHTWARDS
+    public boolean winDiagUp() {
+	// CHECK LEFT BORDER
+	boolean retVal = true;
+	for (int r = 3; r < 8; r++) {
+	    Object[] diag = _board.getDiagUp(r,0);
+	    for (int i = 0; i < diag.length - 3; i++) {
+		retVal = true;
+		for (int n = i + 1; n < (i + 4); n++) {
+		    if ( !diag[i].equals(diag[n]) || diag[i].equals("O") ) {
+			retVal = false; // didn't pass test
+			break; // check next piece in diagonal
+		    }
+		}
+		// return true if retVal remains true after test of four consecutive pieces
+		if (retVal) return true;
+	    }
+	}
+
+	// CHECK BOTTOM BORDER
+	for (int c = 1; c < 5; c++) {
+	    Object[] diag = _board.getDiagUp(7,c);
+	    for (int i = 0; i < diag.length - 3; i++) {
+		retVal = true;
+		for (int n = i + 1; n < (i + 4); n++) {
+		    if ( !diag[i].equals(diag[n]) || diag[i].equals("O") ) {
+			retVal = false; // didn't pass test
+			break; // check next piece in diagonal
+		    }
+		}
+		// return true if retVal remains true after test of four consecutive pieces
+		if (retVal) return true;
+	    }
+	}
+	return false; // if none of the above remains true			
+    }
+
+    // DIAGONAL CHECK LEFTWARDS
+    public boolean winDiagDown() {
+	// CHECK LEFT BORDER
+	boolean retVal = true;
+	for (int r = 0; r < 5; r++) {
+	    Object[] diag = _board.getDiagDown(r,0);
+	    for (int i = 0; i < diag.length - 3; i++) {
+		retVal = true;
+		for (int n = i + 1; n < (i + 4); n++) {
+		    if ( !diag[i].equals(diag[n]) || diag[i].equals("O") ) {
+			retVal = false; // didn't pass test
+			break; // check next piece in diagonal
+		    }
+		}
+		// return true if retVal remains true after test of four consecutive pieces
+		if (retVal) return true;
+	    }
+	}
+
+	// CHECK TOP BORDER
+	for (int c = 1; c < 5; c++) {
+	    Object[] diag = _board.getDiagDown(0,c);
+	    for (int i = 0; i < diag.length - 3; i++) {
+		retVal = true;
+		for (int n = i + 1; n < (i + 4); n++) {
+		    if ( !diag[i].equals(diag[n]) || diag[i].equals("O") ) {
+			retVal = false; // didn't pass test
+			break; // check next piece in diagonal
+		    }
+		}
+		// return true if retVal remains true after test of four consecutive pieces
+		if (retVal) return true;
+	    }
+	}
+	return false; // if none of the above remains true
+    }
+
+    public boolean isGameOver() {
+	return winH() || winV() || winDiagDown() || winDiagUp(); // game is over if four consecutive (same) pieces found
     }
 
     // for UX
@@ -70,8 +169,9 @@ public class Connect4 implements Game {
 
 	return true;
     }
-
-    public boolean checkC() { // avoid text if computer player is choosing column
+    
+    // avoid text output if computer player is choosing column
+    public boolean checkC() { 
 	// make sure in boundaries
 	if (! ((_col - 1) >= 0 && (_col - 1) < 8) ) {
 	    return false;
@@ -100,7 +200,8 @@ public class Connect4 implements Game {
 	// modify _board with dropped piece
 	_board.setCol(_col - 1, col);
     }
- 
+
+    // simulate one turn between user and COM
     public void playTurn() {
 	// ======= USER TURN =======
 	System.out.print("User Turn #" + _numTurn + ": ");
@@ -153,6 +254,7 @@ public class Connect4 implements Game {
 	_numTurn++;
     }
 
+    // simulate entire game from static context
     public void playGame() {
 	System.out.println(_board);
 	while ( !isGameOver() && !isBoardFull() ) {
@@ -166,11 +268,13 @@ public class Connect4 implements Game {
 	    
     }
 
+    // simulate entire game from non static context
     public static void play() {
 	Connect4 game = new Connect4();
 	game.playGame();
     }
 
+    // for testing
     public static void main(String[] args) {
 	play();
     }
