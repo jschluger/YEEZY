@@ -25,35 +25,39 @@ public class Solitaire {
     public Solitaire() {
 	//populate the deck
 	String[] temp = {"H","D","S","C"};
-	for (String s : temp)
-	    for (int n = 1; n <= 13; n++)
-		_deck.add( new Card(s,n) );
-	shuffle(_deck);
 
 	//for testing purposes
-	for (int i = 0;i < 15;i++) { 
-	    //set up the deck
-	    for (int i = 0; i < 7; i++){
-		_piles.add( new ArrayList <Card>() );
-		//add this many cards and leave them face down
-		for (int j = 0; j < i; j++){
-		    _piles.get(i).add( _deck.get(0) );
-		    _deck.remove(0);
-		}
-		//add one more card flip it
+	for (int k = 0; k < 15;k++) { 
+	    
+	    for (String s : temp)
+		for (int n = 1; n <= 13; n++)
+		    _deck.add( new Card(s,n) );
+	    shuffle(_deck);
+	}
+	
+	
+	//set up the deck
+	for (int i = 0; i < 7; i++){
+	    _piles.add( new ArrayList <Card>() );
+	    //add this many cards and leave them face down
+	    for (int j = 0; j < i; j++){
 		_piles.get(i).add( _deck.get(0) );
-		_piles.get(i).get(i).flip();
 		_deck.remove(0);
 	    }
-	    for (int i = 0; i < 4; i++){
-		_final.add( new ArrayList <Card>() );
-	    }
-
+	    //add one more card flip it
+	    _piles.get(i).add( _deck.get(0) );
+	    _piles.get(i).get(i).flip();
+	    _deck.remove(0);
+	}
+	for (int i = 0; i < 4; i++){
+	    _final.add( new ArrayList <Card>() );
+	    
+	    
 	}
 	_currentPos = 0;
 	topCard().flip();
     }
-
+    
     //randomly rearrange elements of an ArrayList
     //taken from skelatin for various sorts
     public static void shuffle( ArrayList al ) {
