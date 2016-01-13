@@ -98,11 +98,12 @@ public class Board {
     // preconditional: from left or top border of board
     // postconditional: returns diagonal from point specified going downwards and right
     public Object[] getDiagDown( int row, int col ) {
-	Object[] retArr = new Object[7 - Math.abs(col-row) + 1];
+	int x = _board.size() - 1; 
+	Object[] retArr = new Object[x - Math.abs(col-row) + 1];
 	int pos = 0;
 	int r = row;
 	int c = col;
-	while (row <= 7 - c && col <= 7 - r && pos < retArr.length) { // algo to find limits
+	while (row <= x - c && col <= x - r && pos < retArr.length) { // algo to find limits
 	    retArr[pos] = _board[row][col];
 	    row++;
 	    col++;
