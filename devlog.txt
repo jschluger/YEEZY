@@ -13,6 +13,13 @@ Jack and Manish's . . .
                                               \______/ 
 
 =========================================================
+2016-01-13:
+
+Jack:
+
+Manish:
+
+=========================================================
 2016-01-12:
 
 Jack:
@@ -22,6 +29,7 @@ Jack:
 
 Manish:
 *completed Connect4 with full functionality
+*added methods to extract diagonals in Board class
 
 
 =========================================================
