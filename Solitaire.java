@@ -26,11 +26,11 @@ public class Solitaire {
 	//populate the deck
 	String[] temp = {"H","D","S","C"};
 
-	    for (String s : temp)
-		for (int n = 1; n <= 13; n++)
-		    _deck.add( new Card(s,n) );
-	    shuffle(_deck);
-	    
+	for (String s : temp)
+	    for (int n = 1; n <= 13; n++)
+		_deck.add( new Card(s,n) );
+	shuffle(_deck);
+	
 	
 	//set up the deck
 	for (int i = 0; i < 7; i++){
@@ -104,7 +104,7 @@ public class Solitaire {
     }
     
     
-    //returns a string form of one pile
+    //returns a string form of one pile horozontally
     public String showPile(ArrayList<Card> a) {
 	String s = "";
 	if ( a.size() == 0 ) return "EMPTY\n";
@@ -137,7 +137,6 @@ public class Solitaire {
     //where pile cooresponds to the pile ##s as numbered on the board
     public int[] pickOrigin() {
 	
-	System.out.println(this);	
 	System.out.print("move some cards from pile...: ");
 	String pile = Keyboard.readString();
 	int pileI = -1;
@@ -312,11 +311,17 @@ public class Solitaire {
 	int dest = pickLocation();
 	
 	if (isValidMove(choice, dest)) makeMove(choice, dest);
-	else System.out.println("\nNOT A VALID MOVE. TRY AGAIN: \n");
+	else {
+	    System.out.println("\nNOT A VALID MOVE. TRY AGAIN: \n");
+	    playTurn();
+	}
     }
     
     public void playGame() {
-	while (! isGameOver() ) playTurn();
+	while (! isGameOver() ) {
+	    System.out.println(this);	
+	    playTurn();
+	}
     }
 
     public static void play() {
