@@ -25,8 +25,10 @@ As of 2016-01-14
 8. Make Solitaire implement Game (est: 5 min.)
 9. Make 2048 implement Game (est: 5 min.)
 10. Enhance Solitaire for a couple of rule changes and magic swap feature (est: 1 hr?)
+
 11. Create KenKen (est: 2.5 hrs?)
+12. Create Battle (est: 3-4 hrs?) 
 
-12. Weave all these games together in final RPG (est: 3-4 days)
+13. Weave all these games together in final RPG (est: 3-4 days)
 
-13. Enhance, Enhance, Enhance (est: 2 days)
+14. Enhance, Enhance, Enhance (est: 2 days)

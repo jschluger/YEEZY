@@ -25,7 +25,7 @@ public class Solitaire {
     public Solitaire() {
 	//populate the deck
 	String[] temp = {"H","D","S","C"};
-
+	
 	for (String s : temp)
 	    for (int n = 1; n <= 13; n++)
 		_deck.add( new Card(s,n) );
@@ -143,6 +143,13 @@ public class Solitaire {
 	if (target.equals("D")) {
 	    dealCard();
 	    System.out.println("\nDELT. PICK AGAIN!! \n");
+	    System.out.println(this);
+	    return pickOrigin();
+	}
+
+	else if (target.equals("M")) {
+	    magic();
+	    System.out.println("\nMAGICCCCCC! \n");
 	    System.out.println(this);
 	    return pickOrigin();
 	}
@@ -296,7 +303,27 @@ public class Solitaire {
 	return true;
 	
     }
-    
+
+
+    //magic -- swaps cards in the deck for cards that are face down in the piles,
+    //so that if there are no more moves the user can keep playing
+    public void magic() {
+	for (int i = 0; i < _deck.size(); i++) {
+	    int r = 0; int c = 0;
+	    boolean b = false;
+	    for (r = 0; r < _piles.size(); r++)
+		for (c = 0; c < _piles.get(r).size(); c++)
+		    if (! _piles.get(r).get(c).getFaceUp()) {
+			b = true;
+			break;
+		    }
+	    if (b) break;
+	    _deck.set(i,_piles.get(r).set(c, _deck.get(i)) );
+	}
+	
+    }
+
+
     //picks where you will move a chosen card too and moves it there
     //first checking if it is a valid move
     public void playTurn() {
