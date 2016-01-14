@@ -129,7 +129,7 @@ public class Solitaire {
 	_currentPos++;
 	if (_currentPos == _deck.size() ) _currentPos = 0;
 	topCard().flip();
-
+	
     }
     
     //picks where the card you will move is
@@ -143,6 +143,7 @@ public class Solitaire {
 	if (target.equals("D")) {
 	    dealCard();
 	    System.out.println("\nDELT. PICK AGAIN!! \n");
+	    System.out.println(this);
 	    return pickOrigin();
 	}
 	
@@ -195,6 +196,11 @@ public class Solitaire {
 	else origin = _piles.get( choice[0] - 4 ).get( choice[1] );
 	
 	if (dest < 4){
+	    //must be last card in origin pile
+	    if (choice[0] > 4
+		&& choice[1] < _piles.get(choice[0] - 4).size() - 1
+		) return false;
+	    
 	    if ( _final.get(dest).size() > 0)
 		destination = _final.get(dest).get( _final.get(dest).size() - 1 );
 	    //only aces can move to empty final piles
