@@ -1,0 +1,32 @@
+==========
+TO DO LIST
+==========
+
+Team YEEZY: Manish Saha, Jack Schluger
+
+~~~~~~~ COMPLETED BETWEEN 2016-01-11 AND 2016-01-13 ~~~~~~~
+
+===== DATAYPES and INTERFACES =====
+1. Board Class for datatype
+2. Card Class for datatype
+3. Game interface
+
+===== GAMES =====
+3. Battleship
+4. 2048
+5. Connect4
+6. Solitaire
+7. TicTacToe 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As of 2016-01-14
+
+8. Make Solitaire implement Game (est: 5 min.)
+9. Make 2048 implement Game (est: 5 min.)
+10. Enhance Solitaire for a couple of rule changes and magic swap feature (est: 1 hr?)
+11. Create KenKen (est: 2.5 hrs?)
+
+12. Weave all these games together in final RPG (est: 3-4 days)
+
+13. Enhance, Enhance, Enhance (est: 2 days)
