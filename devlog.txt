@@ -16,8 +16,8 @@ Jack and Manish's . . .
 2016-01-14:
 
 Jack:
-*also wrote UMLS and flowchartes
-*fixed some kinks in Solitaire, and started the magic() funcition in that class
+*also wrote UMLS and flowcharts
+*fixed some kinks in Solitaire, and started the magic() function in that class
 
 Manish:
 *enhanced Battleship for better UI
