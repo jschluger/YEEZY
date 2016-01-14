@@ -16,6 +16,12 @@ Jack and Manish's . . .
 2016-01-13:
 
 Jack:
+*Finished Solitare, which consisted of:
+   *Changing horizontal printing to vertical
+   *changed input from chosing pile & card to typing in card face
+   *fixed bugs
+   
+
 
 Manish:
 *completed TicTacToe with full functionality
