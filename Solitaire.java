@@ -69,8 +69,8 @@ public class Solitaire {
     //toString
     public String toString() {
 	String s;
-	s = "d:\tDECK\t\t\t0\t1\t2\t3\n";
-	s += "n:\t" + topCard() + "\t\t\t";
+	s = "D:\tDECK\t\t\t0\t1\t2\t3\n";
+	s += "\t" + topCard() + "\t\t\t";
 	
 	for (int i = 0; i < longestSubArrayList(_final); i++) {
 	    //for each ArrayList<Card> in _final
@@ -136,54 +136,41 @@ public class Solitaire {
     //returns int[] in the form {chosen pile, chosen card} if it is valid
     //where pile cooresponds to the pile ##s as numbered on the board
     public int[] pickOrigin() {
-	
-	System.out.print("move some cards from pile...: ");
-	String pile = Keyboard.readString();
-	int pileI = -1;
-	try {
-	    pileI = Integer.parseInt(pile);
-	}
-	catch (NumberFormatException e){}
 
-	if (pile.equals("d")) {
+	System.out.print("Pick up card ...: ");
+	String target = Keyboard.readString();
+	
+	if (target.equals("D")) {
 	    dealCard();
 	    System.out.println("\nDELT. PICK AGAIN!! \n");
 	    return pickOrigin();
 	}
-	else if ( pile.equals("n") ) return new int[] {-1,_currentPos};//topCard();
+	
+	else return linSearch(target);
+    }
 
-	System.out.print(" ...card: ");
-	
-	int card = Keyboard.readInt();
-	
-	if ( pileI >= 0 && pileI < 4 &&
-	     _final.get(pileI).size() > 0
-	     && card < _final.get(pileI).size()
-	     && card >= 0 
-	     && _final.get(pileI).get(card).getFaceUp()
-	     )
-	    return new int[] {pileI,card};//_final.get(pileI).get(card);
-	
-	else if ( pileI >= 4 && pileI < 11 &&
-		  _piles.get(pileI - 4).size() > 0
-		  && card < _piles.get(pileI - 4).size()
-		  && card >= 0 
-		  && _piles.get(pileI - 4).get(card).getFaceUp()
-		  )
-	    return new int[] {pileI,card};//_piles.get(pileI - 4).get( card);
-	
-	else {
-	    System.out.println("\nBAD CHOICE. PICK AGAIN: \n");
-	    return pickOrigin();
 
+    public int[] linSearch(String target) {
+	if ( target.equals(topCard().toString()) ) return new int[] {-1, _currentPos};
+
+	for (int r = 0; r < _final.size(); r++) {
+	    for (int c = 0; c < _final.get(r).size(); c++){
+		if ( target.equals(_final.get(r).get(c).toString()) ) return new int[] {r,c};
+	    }
 	}
+	for (int r = 0; r < _piles.size(); r++) {
+	    for (int c = 0; c < _piles.get(r).size(); c++){
+		if ( target.equals(_piles.get(r).get(c).toString()) ) return new int[] {r + 4,c};
+	    }
+	}
+	return new int[] {-100,-100};
     }
 
     //picks where you will move a chosen card to
     //returns pile you have chosen, if it is valid
     public int pickLocation() {
 
-	System.out.print("to the end of pile ...: ");
+	System.out.print("and move it to the end of pile ...: ");
 	int pile = Keyboard.readInt();
 	
 	if (pile >= 0 && pile < 11)
