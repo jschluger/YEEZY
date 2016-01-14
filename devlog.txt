@@ -13,19 +13,27 @@ Jack and Manish's . . .
                                               \______/ 
 
 =========================================================
+2016-01-14:
+
+Jack:
+
+Manish:
+*enhanced Battleship for better UI
+*wrote UMLS and flowcharted the project
+
+=========================================================
 2016-01-13:
 
 Jack:
-*Finished Solitare, which consisted of:
+*Finished Solitaire, which consisted of:
    *Changing horizontal printing to vertical
-   *changed input from chosing pile & card to typing in card face
+   *changed input from choosing pile & card to typing in card face
    *fixed bugs
-   
-
 
 Manish:
 *completed TicTacToe with full functionality
 *fixed formatting of Connect4
+*helped Jack in locating bugs for Solitaire, suggestions on better UX
 
 =========================================================
 2016-01-12:
@@ -33,7 +41,6 @@ Manish:
 Jack:
 *almost finished Solitaire, only problem is when trying to move piles of cards instead of individual cards
 *Wrote class Card to use in Solitaire, which can be used if we write and more card games
-
 
 Manish:
 *completed Connect4 with full functionality
