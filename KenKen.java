@@ -1,14 +1,14 @@
 /*====================================                                     
   class KenKen -- implenemts the game KenKen as found in newspapers everywhere
 
-  implements the game interface(sike not really)
+  implements the game interface
   
   ====================================*/
 
 import cs1.Keyboard;
 import java.util.ArrayList;
 
-public class KenKen {
+public class KenKen implements Game{
 
     //instance vars
     Board KEY1;
