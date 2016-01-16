@@ -96,10 +96,10 @@ public class KenKen {
 	int column;
 	int guess;
 	
-	System.out.println("Row: ");
+	System.out.print("Row: ");
 	row = Keyboard.readInt();
 
-	System.out.println("Column: ");
+	System.out.print("Column: ");
 	column = Keyboard.readInt();
 
 	if (row < 0 || row > 3 || column < 0 || column > 3) {
@@ -107,7 +107,7 @@ public class KenKen {
 	    return takeInput();
 	}
 
-	System.out.println("Guess: ");
+	System.out.print("Guess: ");
 	guess = Keyboard.readInt();
 	
 	return new int[] {row, column, guess};
