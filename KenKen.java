@@ -91,7 +91,7 @@ public class KenKen implements Game{
 
     //takeInput -- takes user input and returns int[] in form:
     //{row, column, guess}
-    public int[] takeInput() {
+    public Integer[] takeInput() {
 	int row;
 	int column;
 	int guess;
@@ -106,12 +106,13 @@ public class KenKen implements Game{
 	    System.out.println("\nThis is not a valid position.\nPick again.\n");
 	    return takeInput();
 	}
-
+	
 	System.out.print("Guess: ");
 	guess = Keyboard.readInt();
 	System.out.println();
-	
-	return new int[] {row, column, guess};
+
+	if (guess < 0) return new Integer[] {row, column, null};
+	return new Integer[] {row, column, guess};
     }
 
     //isCorrect -- checks if user input, gotten via takeInput(), is the correct number for that spot
@@ -122,17 +123,19 @@ public class KenKen implements Game{
     
     public void playTurn() {
 	print1();
-	int[] in = takeInput();
-	if ( isCorrect(in) ) {
-	    _input.set(in[0],in[1],in[2]);
-	}
-	else System.out.println("Sorry, this is not correct. Try again.");
+	Integer[] in = takeInput();
+	//if ( isCorrect(in) ) {
+	
+	_input.set(in[0],in[1],in[2]);
+
+	//}
+	//else System.out.println("Sorry, this is not correct. Try again.");
     }
 
     public boolean isGameOver() {
 	for (int r = 0; r < _input.size(); r++)
 	    for (int c = 0; c < _input.size(); c++)
-		if ( _input.get(r,c) == null ) return false;
+		if ( !KEY1.get(r,c).equals(_input.get(r,c)) ) return false;
 	return true;
     }
 
