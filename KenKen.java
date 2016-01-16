@@ -103,19 +103,20 @@ public class KenKen {
 	column = Keyboard.readInt();
 
 	if (row < 0 || row > 3 || column < 0 || column > 3) {
-	    System.out.println("This is not a valid position.\nPick again.\n");
+	    System.out.println("\nThis is not a valid position.\nPick again.\n");
 	    return takeInput();
 	}
 
 	System.out.print("Guess: ");
 	guess = Keyboard.readInt();
+	System.out.println();
 	
 	return new int[] {row, column, guess};
     }
 
     //isCorrect -- checks if user input, gotten via takeInput(), is the correct number for that spot
     public boolean isCorrect(int[] in) {
-	return _input.get(in[0],in[1]).equals( KEY1.get(in[0],in[1]) );
+	return KEY1.get(in[0],in[1]).equals( in[2] );
 	
     }
     
@@ -125,7 +126,7 @@ public class KenKen {
 	if ( isCorrect(in) ) {
 	    _input.set(in[0],in[1],in[2]);
 	}
-	else System.out.println("Sorry, this is not correct. Try again.\n");
+	else System.out.println("Sorry, this is not correct. Try again.");
     }
 
     public boolean isGameOver() {
@@ -140,6 +141,7 @@ public class KenKen {
 	while ( ! isGameOver() ) {
 	    playTurn();
 	}
+	print1();
 	System.out.println("YOU HAVE WON !!!");
     }
     
