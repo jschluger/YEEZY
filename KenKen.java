@@ -120,7 +120,7 @@ public class KenKen {
     }
     
     public void playTurn() {
-	print1()
+	print1();
 	int[] in = takeInput();
 	if ( isCorrect(in) ) {
 	    _input.set(in[0],in[1],in[2]);
