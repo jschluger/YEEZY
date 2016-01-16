@@ -12,7 +12,7 @@ public class KenKen {
 
     //instance vars
     Board KEY1;
-    
+    Board input;
     
     public KenKen() {
 	//programing the board -->
@@ -35,19 +35,67 @@ public class KenKen {
 	KEY1.set(3,1,2);
 	KEY1.set(3,2,1);
 	KEY1.set(3,3,4);
+
+	input = new Board(4);
+	
     }
     
-    
-    
-    
-    
+    //prints out board 1
+    public void print1() {
+	String s = " ========= ========= ========= =========\n|12x      .         .         |2/       |\n|         .         .         |         |\n|    ";
+	s += show( input.get(0,0) ); 
+	s += "    .    ";
+	s += show( input.get(0,1) );
+	s += "    .    ";
+	s += show( input.get(0,2) );
+	s += "    |    ";
+	s += show( input.get(0,3) );
+	
+	s+= "    |\n|         .         .         |         |\n ========= ========= ========= . . . . .\n|4        |6+       |2/       |         |\n|         |         |         |         |\n|    ";
+	s += show( input.get(1,0) ); 
+	s += "    |    ";
+	s += show( input.get(1,1) );
+	s += "    |    ";
+	s += show( input.get(1,2) );
+	s += "    |    ";
+	s += show( input.get(1,3) );
+
+	s+= "    |\n|         |         |         |         |\n ========= . . . . . . . . . . =========\n|1-       |         |         |8+       |\n|         |         |         |         |\n|    ";
+	s += show( input.get(2,0) ); 
+	s += "    |    ";
+	s += show( input.get(2,1) );
+	s += "    |    ";
+	s += show( input.get(2,2) );
+	s += "    |    ";
+	s += show( input.get(2,3) );
+
+	s+= "    |\n|         |         |         |         |\n . . . . . . . . . . ========= . . . . .\n|         |         |         .         |\n|         |         |         .         |\n|    ";
+	s += show( input.get(3,0) );
+	s += "    |    ";
+	s += show( input.get(3,1) );
+	s += "    |    ";
+	s += show( input.get(3,2) );
+	s += "    .    ";
+	s += show( input.get(3,3) );
+
+	s+= "    |\n|         |         |         .         |\n ======== ========= ========= =========\n";
+	
+	
+	System.out.println(s);
+    }
+
+    //show -- so that we dont pront out a bunch of NULLs
+    public String show( Object o ) {
+	if (o == null) return " ";
+	else return o.toString(); 
+    }
     
     
     public static void main(String[] args) {
 
 	KenKen k = new KenKen();
 	System.out.println(k.KEY1);
-			
+	k.print1();
     }
 
     
