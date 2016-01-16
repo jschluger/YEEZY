@@ -97,10 +97,10 @@ public class KenKen implements Game{
 	int guess;
 	
 	System.out.print("Row: ");
-	row = Keyboard.readInt();
+	row = Keyboard.readInt() - 1;
 
 	System.out.print("Column: ");
-	column = Keyboard.readInt();
+	column = Keyboard.readInt() - 1;
 
 	if (row < 0 || row > 3 || column < 0 || column > 3) {
 	    System.out.println("\nThis is not a valid position.\nPick again.\n");
