@@ -138,10 +138,21 @@ public class KenKen implements Game{
 		if ( !KEY1.get(r,c).equals(_input.get(r,c)) ) return false;
 	return true;
     }
-
+    
     
     public void playGame() {
 	while ( ! isGameOver() ) {
+	    if ( _input.isFull() ) {
+		print1();
+		System.out.println("The board is full, but not correct. Do you want to keep playing?");
+		System.out.print("Answer y/n (IF YOU ANSWER n YOU WILL LOSE THE GAME): ");
+
+		if (Keyboard.readString().equals("n")) {
+		    System.out.println("You have lost. :(");
+		    return;
+		}
+	    }
+	    
 	    playTurn();
 	}
 	print1();

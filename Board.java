@@ -134,6 +134,14 @@ public class Board {
 		if ( o.equals(get(r,c)) ) return true; // true if equivalence found
 	return false;
     }
+
+    // t/f if there are no nulls in _board
+    public boolean isFull() {
+	for (int r = 0; r < size(); r++)
+	    for (int c = 0; c < size(); c++)
+		if ( get(r,c) == null ) return false; // true if null found
+	return true;
+    }	
     
     // override toString()
     public String toString() {
