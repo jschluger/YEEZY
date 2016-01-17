@@ -83,7 +83,7 @@ public class KenKen implements Game{
 	System.out.println(s);
     }
     
-    //show -- so that we dont pront out a bunch of NULLs
+    //show -- so that we dont print out a bunch of NULLs
     public String show( Object o ) {
 	if (o == null) return " ";
 	else return o.toString(); 
