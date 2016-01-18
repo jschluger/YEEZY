@@ -13,6 +13,41 @@ Jack and Manish's . . .
                                               \______/ 
 
 =========================================================
+2016-01-16:
+
+Jack: Day off again to do the rest of my work
+
+Manish:
+*
+
+=========================================================
+2016-01-17:
+
+Jack:
+*Started and finished KenKen, for one board
+
+Manish:
+*
+
+=========================================================
+2016-01-16:
+
+Jack: Took the day off because its friday
+
+Manish:
+*
+
+=========================================================
+2016-01-15:
+
+Jack:
+*Made some actual flow charts
+*Started Stuy, the rpg class and driver file for the whole project
+
+Manish:
+*
+
+=========================================================
 2016-01-14:
 
 Jack:
@@ -59,10 +94,4 @@ Manish:
 *completed Battleship with full functionality
 *Wrote Board Class
 
-=========================================================
-2016-01-00:
-
-Jack:
-
-Manish:
 
