@@ -1,14 +1,14 @@
 /*====================================                                     
   class Solitaire --  implements the card game solitaire
 
-  implements the game interface(sike not really)
+  implements the game interface
   
   ====================================*/
 
 import cs1.Keyboard;
 import java.util.ArrayList;
 
-public class Solitaire {
+public class Solitaire implements Game {
     
     //instance vars
     //the deck of cards not yet used
