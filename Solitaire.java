@@ -8,7 +8,7 @@
 import cs1.Keyboard;
 import java.util.ArrayList;
 
-public class Solitaire {
+public class Solitaire implements Game{
     
     //instance vars
     //the deck of cards not yet used
