@@ -11,7 +11,7 @@ public abstract class Period {
     
     
     //wrapper funciton for all that will happen during each period
-    public void scenario();
+    public abstract void scenario();
     
     
     
