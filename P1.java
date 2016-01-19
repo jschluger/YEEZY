@@ -52,8 +52,13 @@ public class P1 extends Period {
 	    System.out.println("\nSenor Simon *calls on you*: Why don't you come up the the board and play a game of TicTacToe. If you beat me, you can pass this class. If I win, you fail.\n");
 	}
 	
-	TicTacToe.play();
-
+	if ( TicTacToe.play() ) {
+	    System.out.println("\nSenor Simon: Aye chico, now you can pass this class! Maybe you will graduate afterall!");
+	}
+	else {
+	    System.out.println("\nSenor Simon: Aye chico, you fail. I see summer school in your future if you don't step up your game ...");
+	}
+	
     }
     
     public static void main(String[] args) {

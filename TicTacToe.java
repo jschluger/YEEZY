@@ -145,7 +145,10 @@ public class TicTacToe implements Game {
     }
 
     // simulate one turn between user and COM
-    public void playTurn() {
+    //returns 0 if neither player has won,
+    //1 if the player has won
+    //and 2 if the COM has won
+    public int playTurn() {
 	// ======= USER TURN =======
 	System.out.print("User Turn " + _numTurn + ":\n");
 
@@ -171,7 +174,7 @@ public class TicTacToe implements Game {
 	
 	if (isGameOver()) {
 	    System.out.println("Congratulations! You have beat me!\n");
-	    return;
+	    return 1;
 	}
 	
 	// increment numTurn by 1
@@ -204,28 +207,39 @@ public class TicTacToe implements Game {
 	// check if COM has beat you
 	if ( isGameOver() ) {
 	    System.out.println("I have beat you! Success awaits.");
+	    return 2;
 	}
+	else return 0;
     }
-
+    
     // simulate entire game from static context
-    public void playGame() {
+    //upon completion, returns true if you win
+    //false if the COM wins
+    public boolean playGame() {
 	displayInstructions();
 	System.out.println(_board);
+	int test;
 	while ( !isGameOver() && !isBoardFull() ) {
-	    playTurn();
+	    test = playTurn();
+	    
+	    if (test == 1) return true;
+	    if (test == 2) return false;
 	}
-
+	
 	// stalemate only possible by COM
 	if ( isBoardFull() ) {
 	    System.out.println("Stalemate.");
+	    return false;
 	}
-	    
-    }
 
+	return false;
+
+    }
+    
     // simulate entire game from non static context
-    public static void play() {
+    public static boolean play() {
 	TicTacToe game = new TicTacToe();
-	game.playGame();
+	return game.playGame();
     }
 
     // for testing
