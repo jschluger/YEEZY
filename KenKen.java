@@ -8,7 +8,7 @@
 import cs1.Keyboard;
 import java.util.ArrayList;
 
-public class KenKen implements Game{
+public class KenKen implements Game {
 
     //instance vars
     Board KEY1;
