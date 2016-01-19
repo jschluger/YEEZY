@@ -1,8 +1,8 @@
 /*====================================                                     
   class Solitaire --  implements the card game solitaire
 
-  implements the game interface(sike not really)
-  
+  implements Game interface
+  uses Card as data type
   ====================================*/
 
 import cs1.Keyboard;
