@@ -177,6 +177,12 @@ public class TicTacToe implements Game {
 	    return 1;
 	}
 	
+	// stalemate only possible by your turn
+	if ( isBoardFull() ) {
+	    System.out.println("Stalemate.");
+	    return 2;
+	}
+	
 	// increment numTurn by 1
 	_numTurn++;
 	
@@ -218,21 +224,13 @@ public class TicTacToe implements Game {
     public boolean playGame() {
 	displayInstructions();
 	System.out.println(_board);
-	int test;
+	int test = 0;
 	while ( !isGameOver() && !isBoardFull() ) {
 	    test = playTurn();
-	    
-	    if (test == 1) return true;
-	    if (test == 2) return false;
-	}
-	
-	// stalemate only possible by COM
-	if ( isBoardFull() ) {
-	    System.out.println("Stalemate.");
-	    return false;
 	}
 
-	return false;
+	if (test == 1) return true;
+	else return false;
 
     }
     
