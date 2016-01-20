@@ -18,8 +18,8 @@ Jack and Manish's . . .
 Jack: 
 
 Manish: 
-*updated Battleship and Connect4 to return booleans in play function
-
+*Updated Battleship and Connect4 to return booleans in play function
+*Wrote P4, modified KenKen to return booleans
 =========================================================
 2016-01-19:
 We did all the stuff for today together, we just updated the devlog at different times
