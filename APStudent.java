@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class APStudent extends HonStudent {
 
-    public RegStudent() {
+    public APStudent() {
 	super();
 	//_schedule.add( the rest of the Periods that we didnt write yet
 

@@ -43,16 +43,20 @@ public class Stuy {
 	
 	int numStudent = choose(student);
 	if (numStudent == 1) {
-	    //_player = new APStudent();
+	    _player = new APStudent();
 	}
 	else if (numStudent == 2) {     ///havent written these classes yet
-	    //_player = new HonStudent();
+	    _player = new HonStudent();
 	}
 	else if (numStudent == 3) {
 	    _player = new RegStudent();
 	    
 	}
-	
+
+	_name = ask("\nWhat is your name?");
+
+	System.out.println("\nWelcome " + _name + ". Get ready for a fun day in Stuyvesant High School :) Good luck (y)\n.\n.\n.\n\n");
+
 	//this plays the whole day
 	for (int i = 1; i <= _player.scheduleLength(); i++) {
 	    _player.getPeriod(i).scenario();
