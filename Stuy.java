@@ -57,7 +57,7 @@ public class Stuy {
 	for (int i = 1; i <= _player.scheduleLength(); i++) {
 	    _player.getPeriod(i).scenario();
 	}
-
+	
     }
 	
     public static void play(){
