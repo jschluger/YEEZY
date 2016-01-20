@@ -5,6 +5,11 @@ public class Stuy {
     private String _name;
     private int _credits;
     private Character _player;
+
+    public Stuy() {
+	_credits = 0;
+	//the other 2 instance variables get set later via user input
+    }
     
     public static int choose(String[] a){
 	String s = "";
@@ -45,7 +50,7 @@ public class Stuy {
 	if (numStudent == 1) {
 	    _player = new APStudent();
 	}
-	else if (numStudent == 2) {     ///havent written these classes yet
+	else if (numStudent == 2) {
 	    _player = new HonStudent();
 	}
 	else if (numStudent == 3) {
@@ -59,7 +64,9 @@ public class Stuy {
 
 	//this plays the whole day
 	for (int i = 1; i <= _player.scheduleLength(); i++) {
-	    _player.getPeriod(i).scenario();
+	    _credits += _player.getPeriod(i).scenario();
+
+	    System.out.println("\nYou still need " + (_player.getCreditsNeeded() - _credits) + " credits to graduate. Make sure you earn them by the end of the day!\n");
 	}
 	
     }

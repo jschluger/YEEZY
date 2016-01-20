@@ -256,7 +256,7 @@ public class Connect4 implements Game {
     }
 
     // simulate entire game from static context
-    public void playGame() {
+    public boolean playGame() {
 	displayInstructions();
 	System.out.println(_board);
 	while ( !isGameOver() && !isBoardFull() ) {
@@ -267,13 +267,15 @@ public class Connect4 implements Game {
 	if ( isBoardFull() ) {
 	    System.out.println("Stalemate.");
 	}
+	//fix this later
+	return true;
 	    
     }
 
     // simulate entire game from non static context
-    public static void play() {
+    public static boolean play() {
 	Connect4 game = new Connect4();
-	game.playGame();
+	return game.playGame();
     }
 
     // for testing

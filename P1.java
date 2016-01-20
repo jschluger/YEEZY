@@ -8,8 +8,12 @@ import java.util.ArrayList;
 
 public class P1 extends Period {
     
+    public P1() {
+	_maxCredits = 1;
+    }
+
     //wrapper function for all that will happen during each period
-    public void scenario(){
+    public int scenario(){
 	System.out.println("\nAs you run up the stairs to the fifth floor, you hear the bell ring. You burst into Spanish class and hear Senor Simon yell, 'Por que estas tarde chico? Aye, donde era?'\n");
 
 	System.out.println("Your response: ");
@@ -52,16 +56,15 @@ public class P1 extends Period {
 	
 	if ( TicTacToe.play() ) {
 	    System.out.println("\nSenor Simon: Aye chico, now you can pass this class! Maybe you will graduate afterall!");
+	    
+	    return _maxCredits;
 	}
 	else {
 	    System.out.println("\nSenor Simon: Aye chico, you fail. I see summer school in your future if you don't step up your game ...");
+
+	    return 0;//no points earned
 	}
 	
-    }
-    
-    public static void main(String[] args) {
-	Period p = new P1();
-	p.scenario();
     }
     
     
