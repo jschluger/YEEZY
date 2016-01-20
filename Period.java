@@ -1,4 +1,5 @@
-/*=====================================                                     
+/*=====================================       
+                              
   class period -- abstract class for each period of the day 
   
   ====================================*/
@@ -13,8 +14,5 @@ public abstract class Period {
     
     //wrapper function for all that will happen during each period
     public abstract int scenario();
-    
-    
-    
-    
+
 } //end class Period
