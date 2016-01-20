@@ -30,6 +30,8 @@ Manish:
 *Implemented Game interface in Solitaire
 *overcame a GitHub conflict resulting in code deletion (bless remote files)
 *added functionality in Stuy (driver class)
+*added HonStudent class (subclass of Character)
+*Jack and I figured skeleton for the rest of this project (looking gooooood)
 
 =========================================================
 2016-01-18:
