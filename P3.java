@@ -19,7 +19,8 @@ public class P3 extends Period {
 	
 	int c1 = Stuy.choose( new String[] {s1,s2} );
 	
-	int c2, c3, c4;
+	int c2, c4;
+	int c3 = 0;
 
        
 	if (c1 == 1) {
