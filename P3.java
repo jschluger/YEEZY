@@ -81,9 +81,10 @@ public class P3 extends Period {
 		if (c4 == 1) {
 		    System.out.println("\nNurse: Great let's begin!");
 		}
+	    }
 	}
        
-	if ( Connect4.play() ) {
+	if ( KenKen.play() ) {
 	    if (c1 == 1 || c3 == 1) {
 		if (c1 == 1) {
 		    System.out.println("\nMr. Galano: Great work! Look! You're not thirsty anymore! Now you are marked prepared!");
