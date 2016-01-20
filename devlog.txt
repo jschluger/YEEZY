@@ -13,6 +13,14 @@ Jack and Manish's . . .
                                               \______/ 
 
 =========================================================
+2016-01-20:
+
+Jack: 
+
+Manish: 
+*updated Battleship and Connect4 to return booleans in play function
+
+=========================================================
 2016-01-19:
 We did all the stuff for today together, we just updated the devlog at different times
 
@@ -22,8 +30,8 @@ Jack:
    *Wrote P1, an actual period which extends Period
 *Wrote Character as the abstract superclass for all the characters and then . . .
    *APStudent extends HonStudent extends RegStudent extends Character
-   *because each new type of character is a new dificulty level, EXTENDING the dificulty level before it
-*Updated Stuy to create a Character, let the user choose the dificulty level, and then play the entire day (or what we have written so far [P1] )
+   *because each new type of character is a new difficulty level, EXTENDING the difficulty level before it
+*Updated Stuy to create a Character, let the user choose the difficulty level, and then play the entire day (or what we have written so far [P1] )
 
 
 Manish: 
