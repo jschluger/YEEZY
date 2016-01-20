@@ -16,4 +16,4 @@ public class RegStudent extends Character {
     
     
 
-}//end class AP
+}//end class RegStudent
