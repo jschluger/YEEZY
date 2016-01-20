@@ -203,7 +203,8 @@ public class Connect4 implements Game {
     }
 
     // simulate one turn between user and COM
-    public void playTurn() {
+    //0 if stalemate, 1 if you win, 2 if COM wins
+    public int playTurn() {
 	// ======= USER TURN =======
 	System.out.print("User Turn #" + _numTurn + ": ");
 
@@ -221,7 +222,7 @@ public class Connect4 implements Game {
 	
 	if (isGameOver()) {
 	    System.out.println("Congratulations! You have beat me!\n");
-	    return;
+	    return 1;
 	}
 
 	// increment numTurn by 1
@@ -252,24 +253,30 @@ public class Connect4 implements Game {
 	// check if COM has beat you
 	if ( isGameOver() ) {
 	    System.out.println("I have beat you! Success awaits.");
-	}
-    }
-
-    // simulate entire game from static context
-    public boolean playGame() {
-	displayInstructions();
-	System.out.println(_board);
-	while ( !isGameOver() && !isBoardFull() ) {
-	    playTurn();
+	    return 2;
 	}
 
 	// stalemate only possible by COM
 	if ( isBoardFull() ) {
 	    System.out.println("Stalemate.");
+	    return 2;
 	}
-	//fix this later
-	return true;
-	    
+	
+	else return 0;
+    }
+
+    // simulate entire game from static context
+    //return true if you win, false if COM wins
+    public boolean playGame() {
+	displayInstructions();
+	System.out.println(_board);
+	int test = 0;
+	while ( !isGameOver() && !isBoardFull() ) {
+	    test = playTurn();
+	}
+	
+	if (test == 1) return true;
+	else return false;
     }
 
     // simulate entire game from non static context
