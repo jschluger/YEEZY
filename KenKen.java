@@ -140,7 +140,7 @@ public class KenKen implements Game {
     }
     
     
-    public void playGame() {
+    public boolean playGame() {
 	while ( ! isGameOver() ) {
 	    if ( _input.isFull() ) {
 		print1();
@@ -149,7 +149,7 @@ public class KenKen implements Game {
 
 		if (Keyboard.readString().equals("n")) {
 		    System.out.println("You have lost. :(");
-		    return;
+		    return false;
 		}
 	    }
 	    
@@ -157,11 +157,12 @@ public class KenKen implements Game {
 	}
 	print1();
 	System.out.println("YOU HAVE WON !!!");
+	return true;
     }
     
-    public static void play() {
+    public static boolean play() {
 	KenKen k = new KenKen();
-	k.playGame();
+	return k.playGame();
     }
 			   
     
