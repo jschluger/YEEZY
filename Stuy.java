@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Stuy {
     private String _name;
     private int _credits;
-    // private Character _player;
+    private Character _player;
     
     public static int choose(String[] a){
 	String s = "";
@@ -46,9 +46,11 @@ public class Stuy {
 	    Solitaire.play();
 	if (numStudent == 2)
 	    KenKen.play();
-	if (numStudent == 3)
-	    Connect4.play();			
-    }
+	if (numStudent == 3) {
+	    _player = new RegStudent();
+	_player.getPeriod(1).scenario();			
+	}
+	}
 	
     public static void play(){
 	Stuy game = new Stuy();
