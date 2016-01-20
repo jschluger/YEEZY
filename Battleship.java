@@ -92,7 +92,8 @@ public class Battleship implements Game {
     }
 
     // play a game of Battleship in a nonstatic context
-    public void playGame() {
+    //true if you win, false if you lose
+    public boolean playGame() {
 	displayInstructions();
 	System.out.print(_board);
 	while (_numTurns > 0) {
@@ -102,20 +103,21 @@ public class Battleship implements Game {
 	    // check if game has been completed before user has exhausted the number of turns available
 	    if (isGameOver()) {
 		System.out.print(_board);
-		break;
+		return true;
 	    }
 	}
 	
-	// check to see if user has failed to correctly pinpoint battleship
-	if (!(isGameOver())) {
-	    System.out.println("Despite your great efforts, you have failed to sink my battleship in this vast ocean. Success awaits.\n");
-	    _board.set(_shipRow - 1, _shipCol - 1, "O"); // show true location
-	    System.out.print(_board);
-	}
+	// user has failed to correctly pinpoint battleship
+
+	System.out.println("Despite your great efforts, you have failed to sink my battleship in this vast ocean. Success awaits.\n");
+	_board.set(_shipRow - 1, _shipCol - 1, "O"); // show true location
+	System.out.print(_board);
+	return false;
+
     }
 
     // plays an entire game of Battleship from static context
-    public static void play() {
+    public static boolean play() {
 	// allow for user input of size of ocean
 	boolean passed = false;
 	int s = 5;
@@ -130,7 +132,7 @@ public class Battleship implements Game {
 	}
 	System.out.println();   
 	Battleship game = new Battleship(s);
-	game.playGame();
+	return game.playGame();
     }
 
     // for testing
