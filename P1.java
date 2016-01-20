@@ -8,9 +8,7 @@ import java.util.ArrayList;
 
 public class P1 extends Period {
     
-    
-    
-    //wrapper funciton for all that will happen during each period
+    //wrapper function for all that will happen during each period
     public void scenario(){
 	System.out.println("\nAs you run up the stairs to the fifth floor, you hear the bell ring. You burst into Spanish class and hear Senor Simon yell, 'Por que estas tarde chico? Aye, donde era?'\n");
 
