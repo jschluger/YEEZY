@@ -19,7 +19,7 @@ We did all the stuff for today together, we just updated the devlog at different
 Jack:
 *Soo much dope stuff!:
 *Wrote Period which is the abstract superclass for each period in the day
-   *Wrote P1, an actuall period which extends Period
+   *Wrote P1, an actual period which extends Period
 *Wrote Character as the abstract superclass for all the characters and then . . .
    *APStudent extends HonStudent extends RegStudent extends Character
    *because each new type of character is a new dificulty level, EXTENDING the dificulty level before it

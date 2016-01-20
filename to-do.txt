@@ -22,13 +22,29 @@ Team YEEZY: Manish Saha, Jack Schluger
 
 As of 2016-01-14
 
-8. Make Solitaire implement Game (est: 5 min.)
-9. Make 2048 implement Game (est: 5 min.)
-10. Enhance Solitaire for a couple of rule changes and magic swap feature (est: 1 hr?)
+Make Solitaire implement Game (est: 5 min.)
+Make 2048 implement Game (est: 5 min.)
+Enhance Solitaire for a couple of rule changes and magic swap feature (est: 1 hr?)
 
-11. Create KenKen (est: 2.5 hrs?)
-12. Create Battle (est: 3-4 hrs?) 
+Create KenKen (est: 2.5 hrs?)
+Create Battle (est: 3-4 hrs?) 
 
-13. Weave all these games together in final RPG (est: 3-4 days)
+Weave all these games together in final RPG (est: 3-4 days)
 
-14. Enhance, Enhance, Enhance (est: 2 days)
+Enhance, Enhance, Enhance (est: 2 days)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As of 2016-01-19 (some changes)
+
+Make 2048 implement Game (est: 2 min)
+Solitaire: rule changes (moving from ace pos to bottom), magic swap, what happens when deck runs out, give up method (est: 1 hr)
+
+Weaving all the games together in RPG:
+========================================================
+Create P2-7 with storylines (est: 2 days)
+Make games return booleans (est: 1 day)
+Modify HonStudent and APStudent accordingly (est: 1 min)
+END
+========================================================
+
