@@ -15,4 +15,23 @@ public abstract class Period {
     //wrapper function for all that will happen during each period
     public abstract int scenario();
 
+    /*prints out
+      .
+      
+      .
+
+      .
+      with pauses between them, so signify waiting*/
+    public void pause() {
+	for (int i = 0; i < 3; i++) {
+	    System.out.println("\n.");
+	    try {
+		Thread.sleep(1000); // 1000 milliseconds is one second. 
+	    }
+	    catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+	    }    
+	}
+    }
+
 } //end class Period
