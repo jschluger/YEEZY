@@ -12,7 +12,7 @@ public class HonStudent extends RegStudent {
 	super();
 	_creditsNeeded += 2;
 
-	//_schedule.add( new P4() );
+	_schedule.add( new P4() );
 	//_schedule.add( new P5() );
 	
     }
