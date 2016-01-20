@@ -42,15 +42,23 @@ public class Stuy {
 	String[] student = {a,b,c};
 	
 	int numStudent = choose(student);
-	if (numStudent == 1)
-	    Solitaire.play();
-	if (numStudent == 2)
-	    KenKen.play();
-	if (numStudent == 3) {
+	if (numStudent == 1) {
+	    //_player = new APStudent();
+	}
+	else if (numStudent == 2) {     ///havent written these classes yet
+	    //_player = new HonStudent();
+	}
+	else if (numStudent == 3) {
 	    _player = new RegStudent();
-	_player.getPeriod(1).scenario();			
+	    
 	}
+	
+	//this plays the whole day
+	for (int i = 1; i <= _player.scheduleLength(); i++) {
+	    _player.getPeriod(i).scenario();
 	}
+
+    }
 	
     public static void play(){
 	Stuy game = new Stuy();
