@@ -84,7 +84,7 @@ public class P4 extends Period {
 	System.out.println("\n*You walk towards " + lunchDest + "*");
 
 	if (c1 == 2) {//you left evan
-	    System.out.println("\nAs you walk, you hear evan running up behind you!");
+	    System.out.println("As you walk, you hear evan running up behind you!");
 	    System.out.println("\nEvan: WAAAIT for MEEEEEEEE");
 
 	    System.out.println("\nJackson: Let's wait for Evan");
@@ -97,7 +97,7 @@ public class P4 extends Period {
 	    System.out.println("\n*thinking*You: Evan smells bad");
 	}
 	
-	//System.out.println();
+	//at this point you are with both evan and jackson, regardless of earlier choices
 
 
 

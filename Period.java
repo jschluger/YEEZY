@@ -22,7 +22,7 @@ public abstract class Period {
 
       .
       with pauses between them, so signify waiting*/
-    public void pause() {
+    public static void pause() {
 	for (int i = 0; i < 3; i++) {
 	    System.out.println("\n.");
 	    try {

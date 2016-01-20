@@ -3,11 +3,10 @@ import java.util.ArrayList;
 
 public class Stuy {
     private String _name;
-    private int _credits;
     private Character _player;
 
     public Stuy() {
-	_credits = 0;
+	//_credits = 0; --> moved to Character
 	//the other 2 instance variables get set later via user input
     }
     
@@ -60,14 +59,17 @@ public class Stuy {
 
 	_name = ask("\nWhat is your name?");
 
-	System.out.println("\nWelcome " + _name + ". Get ready for a fun day in Stuyvesant High School :) Good luck (y)\n.\n.\n.\n\n");
+	System.out.println("\nWelcome " + _name + ". Get ready for a fun day in Stuyvesant High School :) Good luck (y)");
+	Period.pause();
 
 	//this plays the whole day
 	for (int i = 1; i <= _player.scheduleLength(); i++) {
-	    _credits += _player.getPeriod(i).scenario();
+	    _player.playPeriod(i);
 
-	    System.out.println("\nYou still need " + (_player.getCreditsNeeded() - _credits) + " credits to graduate. Make sure you earn them by the end of the day!\n");
+	    System.out.println("\nYou still need " + (_player.getCreditsNeeded() - _player.getCreditsEarned() ) + " credits to graduate. Make sure you earn them by the end of the day!\n");
 	}
+
+	_player.endGame();
 	
     }
 	
