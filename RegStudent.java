@@ -14,9 +14,8 @@ public class RegStudent extends Character {
 	_schedule = new ArrayList<Period>();
 	_schedule.add( new P1() );
 	_schedule.add( new P2() );
+	//_schedule.add( new P3() )
 	
     }
-    
-    
 
 }//end class RegStudent

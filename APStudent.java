@@ -12,10 +12,9 @@ public class APStudent extends HonStudent {
 	super();
 	_creditsNeeded += 2;
 
-	//_schedule.add( the rest of the Periods that we didnt write yet
+	//_schedule.add( new P6() );
+	//_schedule.add( new P7() );
 
     }
-
-
 
 }//end class AP 

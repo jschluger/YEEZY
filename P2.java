@@ -3,9 +3,6 @@
   
   ====================================*/
 
-import cs1.Keyboard;
-import java.util.ArrayList;
-
 public class P2 extends Period {
     
     public P2() {
@@ -121,10 +118,4 @@ public class P2 extends Period {
 
     }
     
-    public static void main(String[] args) {
-	Period p = new P2();
-	p.scenario();
-    }
-    
-    
-}//end class P2
+} // end class P2

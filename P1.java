@@ -1,10 +1,7 @@
 /*=====================================                                     
-  class P1 -- the first period of the day
+  class P1 -- period 1!
   
   ====================================*/
-
-import cs1.Keyboard;
-import java.util.ArrayList;
 
 public class P1 extends Period {
     
@@ -65,8 +62,6 @@ public class P1 extends Period {
 	    return 0;//no points earned
 	}
 	
-    }
+    } 
     
-    
-    
-} //end class Period
+} // end class Period
