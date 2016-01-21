@@ -43,12 +43,13 @@ public abstract class Character {
     
     //run after all Periods are run, to see if you won or lost the game
     public void endGame() {
-	if ( getCreditsEarned() >= getCreditsNeeded() ) {
-	    System.out.println("You graduate!");
-
+	if ( getCreditsEarned() == getCreditsNeeded() ) {
+	    System.out.println("Congratulations! You have earned enough credits to graduate Stuyvesant High School. Godspeed.");
 	}
+	else if ( getCreditsEarned() > getCreditsNeeded() ) {
+	    System.out.println("You a genius. But you have passed with flying colors. Here is your key to success! Another one.");
 	else {
-	    System.out.println("You don't graduate");
+	    System.out.println("They don't want you to succeed. You don't graduate :( Another one.");
 	}
 	
     }

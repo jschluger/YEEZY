@@ -66,7 +66,14 @@ public class Stuy {
 	for (int i = 1; i <= _player.scheduleLength(); i++) {
 	    _player.playPeriod(i);
 
-	    System.out.println("\nYou still need " + (_player.getCreditsNeeded() - _player.getCreditsEarned() ) + " credits to graduate. Make sure you earn them by the end of the day!\n");
+	    int earn = _player.getCreditsEarned();
+	    int need = _player.getCreditsNeeded();
+	    if (earn >= need) {
+		System.out.println("You have already earned enough credits (" + need + ") needed to graduate. You currently have earned " + earn + " credits.");
+	    }
+	    else {
+		System.out.println("\nYou still need " + ( need - earn ) + " credits to graduate. Make sure you earn them by the end of the day!\n");
+	    }
 	}
 
 	_player.endGame();
