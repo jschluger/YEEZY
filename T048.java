@@ -268,9 +268,20 @@ public class T048 implements Game{
     
     
     public boolean isGameOver() {
-	return ( _board.contains(2048) || _board.isFull() );
+	return _board.contains(2048) || noMoves();
     }
 
+    public boolean noMoves() {
+	T048 copy = new T048();
+	for (int r = 0; r < _board.size(); r++) {
+	    for (int c = 0; c < _board.size(); c++) {
+		copy._board.set( r,c, _board.get(r,c) );
+	    }
+	}
+	return 	!( copy.swipeU() || copy.swipeD() || copy.swipeL() || copy.swipeR() );
+    }
+
+    
     /*===================================
       playGame -- play a game of 2048 with an EXISTING T048 object created
       ====================================*/
