@@ -16,6 +16,16 @@ Jack and Manish's . . .
 2016-01-20:
 
 Jack: 
+*
+
+Manish: 
+*Added descriptions for characters (still need to add actual credits)
+*Added exit option in Solitaire
+
+=========================================================
+2016-01-20:
+
+Jack: 
 *Wrote P4, which doesn't call any games
 *moved instance vars from Stuy to Character, so we can use them inside Character and not just Stuy
 *Wrote displayInstructions() for KenKen
