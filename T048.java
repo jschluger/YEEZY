@@ -1,13 +1,13 @@
 /*====================================                                     
   class T048 --  implements the game 2048
-
-  implements the game interface(sike not really)
+  
+  implements the game interface
   uses Board as data type
   ====================================*/
 
 import cs1.Keyboard;
 
-public class T048 {
+public class T048 implements Game{
     
     //instance variables
     private Board _board;
@@ -252,6 +252,7 @@ public class T048 {
 	s = "Good luck! :)";
 	System.out.println(s);
     }
+    
     /*====================================
       plays one turn of 2048
       ====================================*/
@@ -265,30 +266,40 @@ public class T048 {
 	System.out.println("\n" + _board);
     }
     
+    
+    public boolean isGameOver() {
+	return ( _board.contains(2048) || _board.isFull() );
+    }
+
     /*===================================
       playGame -- play a game of 2048 with an EXISTING T048 object created
       ====================================*/
-    public void playGame() {
+    public int playGame() {
 	displayInstructions();
 	System.out.println(_board);
-	while ( !_board.contains(2048) )
+	while ( ! isGameOver() )
 	    playTurn();
+	if ( _board.contains(2048) ) return 3;
+	else if ( _board.contains(1024) ) return 2;
+	else if ( _board.contains(512) ) return 1;
+	else return 0;
     }
 
     /*====================================
       plays an entire game of 2048, from STATIC
       therefore will be called as T048.play()
       ====================================*/
-    public static void play(){
+    public static int play(){
 	T048 t = new T048();
-	t.playGame();
+	return t.playGame();
     }
     
     /*===================================
       main() (for testing)
       ====================================*/
-    public static void main(String[] args){
-	play();
+    public static void main(String[] args) {
+	int creds = play();
+	System.out.println("You earned " + creds + " credits!");
 	/*
 	T048 t = new T048();
 	t._board.set(3,0,1024);
