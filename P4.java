@@ -84,7 +84,7 @@ public class P4 extends Period {
 	System.out.println("\n*You walk towards " + lunchDest + "*");
 
 	if (c1 == 2) {//you left evan
-	    System.out.println("As you walk, you hear evan running up behind you!");
+	    System.out.println("As you walk, you hear Evan running up behind you!");
 	    System.out.println("\nEvan: WAAAIT for MEEEEEEEE");
 
 	    System.out.println("\nJackson: Let's wait for Evan");
@@ -98,6 +98,30 @@ public class P4 extends Period {
 	}
 	
 	//at this point you are with both evan and jackson, regardless of earlier choices
+	
+	System.out.println("\nYou get on the line at " + lunchDest + " and wait to place your order");
+	pause();
+	System.out.println("You have reached the front of the line! What do you want to eat?\n");
+	s1 =  "Baconeggandcheeseavacadochipotleonaroll";
+	s2 = "Combo over rice, no salad";
+	s3 = "Tosted everything bagel with lox spread";
+	a2 = new String[] {s1, s2, s3};
+	
+	c3 = Stuy.choose( a2 );
+
+	while (c3 != c2) {//you picked the wrong option
+	    System.out.println("\n" + lunchDest + " Worker: Sorry, we don't have the " + a2[c3 - 1] + " here. Maybe they have that at " + a1[c3 - 1] + ". What else would you like to eat?\n");
+      
+	    c3 = Stuy.choose( a2 );
+	}
+
+	//now you know you picked the right option
+	String food = a2[c3 - 1];
+	
+
+	System.out.println("\n" + lunchDest + " Worker: Great choice! Why don't you sit down and wait for your food?");
+	pause();
+	System.out.println("\n" + lunchDest + " Worker: Here is your " + food + "!");
 
 
 
@@ -105,18 +129,16 @@ public class P4 extends Period {
 
 
 
-
-
+	
 	/*
 	if (c2 == 1) {
-	    System.out.println("\nJackson: Ferrys it is!");
-	    System.out.println("");
+	    
 	}
 	else if (c2 == 2) {
-	    System.out.println("\nJackson: Halal it is!");
+	    
 	}
 	else if (c2 == 3) {
-	    System.out.println("\nJackson: Zuckers it is!");
+	    
 	}
 	*/
 
