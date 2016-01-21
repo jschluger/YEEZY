@@ -16,10 +16,14 @@ Jack and Manish's . . .
 2016-01-20:
 
 Jack: 
+*Wrote P4, which doesn't call any games
+*moved instance vars from Stuy to Character, so we can use them inside Character and not just Stuy
+*Wrote displayInstructions() for KenKen
+*deep thoughts
 
 Manish: 
 *Updated Battleship and Connect4 to return booleans in play function
-*Wrote P4, modified KenKen to return booleans
+*Wrote P3, modified KenKen to return booleans
 =========================================================
 2016-01-19:
 We did all the stuff for today together, we just updated the devlog at different times
