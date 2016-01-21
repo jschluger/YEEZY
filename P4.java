@@ -123,44 +123,43 @@ public class P4 extends Period {
 	pause();
 	System.out.println("\n" + lunchDest + " Worker: Here is your " + food + "!");
 
+	System.out.println("\nWhat do you want to do with your food?");
+	s1 = "Eat it";
+	s2 = "Throw it at Evan";
 
-
-
-
-
-
+	c4 = Stuy.choose( new String[] {s1, s2} );
 	
-	/*
-	if (c2 == 1) {
-	    
+	if (c4 == 1) {
+	    System.out.println("\nWhich hand do you want to use to eat your food?");
+	    s1 = "right";
+	    s2 = "left";
+
+	    c5 = Stuy.choose( new String[] {s1,s2} );
+
+	    if (c5 == 1) {
+		System.out.println("\nYou pick up your " + food + " with your right hand, but you are a lefty so you spill it everywhere! Evan, who is sitting directly adjacent to you, gets covered in your " + food + "!");
+	    }
+	    else if (c5 == 2) {
+		System.out.println("\nYou pick up your " + food + " with your left hand, but you are a righty so you spill it everywhere! Evan, who is sitting directly adjacent to you, gets covered in your " + food + "!");
+	    }
 	}
-	else if (c2 == 2) {
-	    
+
+	else if (c4 == 2) {
+	    System.out.println("\nYou pick up your " + food + ", and throw it directly into Evan's face! ");
+	    if(c1 == 1) {
+		System.out.println("\nYou: This is for making us wait for you at the begining of the period!");
+	    }
+	    else if (c1 == 2) {
+		System.out.println("\nYou: This is for smelling so bad!");
+	    }
 	}
-	else if (c2 == 3) {
-	    
-	}
-	*/
+	
+	System.out.println("\nEvan: GEEZ! Your " + food + " is all over me! What am I going to do!?");
+	System.out.println("\nJackson: I'll carry you back to school! Vamanos!");
 
-
-
-
-		 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	System.out.println("\nYou: I am still hungry :(");
+	
+	System.out.println("\nYou walk back to school with Evan and Jackson. You swipe in just in time, and get ready to go to your next class!");
 
 	return 0;
     }
