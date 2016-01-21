@@ -139,8 +139,18 @@ public class KenKen implements Game {
 	return true;
     }
     
+    public void displayInstructions() {
+	System.out.println("Welcom to KenKen! The game found in newspapers everywhere!");
+	System.out.println("The goal of the game is to fill the board with the correct numbers. You will be playing on a 4x4 board, so you can use the numbers 1-4. Fill the board in with numbers so as not to repeat a number in any row od column, and so that the numbers in each heavily outlined area will produce the target number shown, by using the opperation shown, on the numbers in that heavily outlined area. Good luck!");
+	System.out.println("\nThis KenKen comes to us from the Thursday, January 14, 2016 edition of The New York Times ");
+
+
+	
+    }
+
     
     public boolean playGame() {
+	displayInstructions();
 	while ( ! isGameOver() ) {
 	    if ( _input.isFull() ) {
 		print1();
