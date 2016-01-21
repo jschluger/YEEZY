@@ -48,6 +48,7 @@ public abstract class Character {
 	}
 	else if ( getCreditsEarned() > getCreditsNeeded() ) {
 	    System.out.println("You a genius. But you have passed with flying colors. Here is your key to success! Another one.");
+	}
 	else {
 	    System.out.println("They don't want you to succeed. You don't graduate :( Another one.");
 	}
