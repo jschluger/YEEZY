@@ -55,7 +55,7 @@ public class Solitaire implements Game {
     }
     
     //randomly rearrange elements of an ArrayList
-    //taken from skelatin for various sorts
+    //taken from skeleton for various sorts
     public static void shuffle( ArrayList al ) {
 	int randomIndex;
 	for( int i = al.size()-1; i > 0; i-- ) {
@@ -136,11 +136,13 @@ public class Solitaire implements Game {
     //returns int[] in the form {chosen pile, chosen card} if it is valid
     //where pile cooresponds to the pile ##s as numbered on the board
     public int[] pickOrigin() {
-
+	int[] empty = new int[0];
 	System.out.print("Pick up card ...: ");
 	String target = Keyboard.readString();
-	
-	if (target.equals("D")) {
+	if (target.equals("exit")) {
+	    return empty;
+	}
+	else if (target.equals("D")) {
 	    dealCard();
 	    System.out.println("\nDELT. PICK AGAIN!! \n");
 	    System.out.println(this);
@@ -326,21 +328,32 @@ public class Solitaire implements Game {
 
     //picks where you will move a chosen card too and moves it there
     //first checking if it is a valid move
-    public void playTurn() {
+    public boolean playTurn() {
 	int[] choice = pickOrigin();
+	if (choice.length == 0) {
+	    return false;
+	}
 	int dest = pickLocation();
 	
 	if (isValidMove(choice, dest)) makeMove(choice, dest);
 	else {
 	    System.out.println("\nNOT A VALID MOVE. TRY AGAIN: \n");
 	    playTurn();
+	    return true;
 	}
+	return true;
     }
     
     public void playGame() {
+	boolean test = false;
 	while (! isGameOver() ) {
 	    System.out.println(this);	
-	    playTurn();
+	    test = playTurn();
+	    if (!test)
+		break;
+	}
+	if (!test) {
+	    System.out.println("Defeat");
 	}
     }
 
