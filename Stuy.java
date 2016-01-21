@@ -40,9 +40,9 @@ public class Stuy {
     public void playGame() {
 	displayInstructions();
 	
-	String a = "AP Student";
-	String b = "Honors Student";
-	String c = "Regular Student";
+	String a = "AP Student\n\t\t*Difficulty: Hard\n\t\t*7 period schedule (including lunch)\n\t\t*10 credits required to graduate\n";
+	String b = "Honors Student\n\t\t*Difficulty: Medium\n\t\t*7 period schedule (including lunch)\n\t\t*6 credits required to graduate\n";
+	String c = "Regular Student\n\t\t*Difficulty: Easy\n\t\t*3 period schedule\n\t\t*3 credits required to graduate\n";
 	String[] student = {a,b,c};
 	
 	int numStudent = choose(student);
