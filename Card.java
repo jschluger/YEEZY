@@ -26,15 +26,26 @@ public class Card {
     
     //toString
     public String toString() {
+	String s = "\033[107m"; //white background
 	//if a card is face down
-	if (! _faceUp) return "||";
+	if (! _faceUp) s+= "\033[1;34m||";
+	
+	else {
+	    if (_suit.equals("H") ) s+= "\033[1;31m";
+	    else if (_suit.equals("D") ) s+= "\033[1;31m";
+	    else if (_suit.equals("C") ) s+= "\033[1;30m";
+	    else if (_suit.equals("S") ) s+= "\033[1;30m";
 
-	//else
-	if (_num == 1) return "A" + _suit; 
-	else if (_num == 11) return "J" + _suit; 
-	else if (_num == 12) return "Q" + _suit; 
-	else if (_num == 13) return "K" + _suit; 
-	else return _num + _suit;
+	    //else
+	    if (_num == 1) s+= "A" + _suit; 
+	    else if (_num == 11) s+= "J" + _suit; 
+	    else if (_num == 12) s+= "Q" + _suit; 
+	    else if (_num == 13) s+= "K" + _suit; 
+	    else s+= _num + _suit;
+	}
+	s += "\033[0m";
+	
+	return s;
     }
 
     /////////accessors//////////////////
