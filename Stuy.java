@@ -33,7 +33,7 @@ public class Stuy {
     }
 
     public void displayInstructions() {
-	System.out.println("Welcome to A Day In Stuy, where you will try to make it through your final day in Stuy and earn enough credits to finally graduate. Bear in mind that failure to win a game will result in no credits earned!");
+	System.out.println("Welcome to '\033[5m'A DAY IN STUY'\033[5m', where you will try to make it through your final day in Stuy and earn enough credits to finally graduate. Bear in mind that failure to win a game will result in no credits earned!");
 	System.out.println("What Character do you want to be?");
     }
 
