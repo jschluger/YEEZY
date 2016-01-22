@@ -33,16 +33,16 @@ public class Stuy {
     }
 
     public void displayInstructions() {
-	System.out.println("Welcome to \033[5mA DAY IN STUY\033[0m, where you will try to make it through your final day in Stuy and earn enough credits to finally graduate. Bear in mind that failure to win a game will result in no credits earned!");
+	System.out.println("Welcome to \033[46mA DAY IN STUY\033[0m, where you will try to make it through your final day in Stuy and earn enough credits to finally graduate. Bear in mind that failure to win a game will result in no credits earned!");
 	System.out.println("What Character do you want to be?");
     }
 
     public void playGame() {
 	displayInstructions();
 	
-	String a = "\033[5mAP Student\033[0m\n\t\t*Difficulty: Hard\n\t\t*7 period schedule (including lunch)\n\t\t*10 credits required to graduate\n";
-	String b = "\033[5mHonors Student\033[0m\n\t\t*Difficulty: Medium\n\t\t*7 period schedule (including lunch)\n\t\t*6 credits required to graduate\n";
-	String c = "\033[5mRegular Student\033[0m\n\t\t*Difficulty: Easy\n\t\t*3 period schedule\n\t\t*3 credits required to graduate\n";
+	String a = "\033[41mAP Student\033[0m\n\t\t*Difficulty: Hard\n\t\t*7 period schedule (including lunch)\n\t\t*10 credits required to graduate\n";
+	String b = "\033[43mHonors Student\033[0m\n\t\t*Difficulty: Medium\n\t\t*7 period schedule (including lunch)\n\t\t*6 credits required to graduate\n";
+	String c = "\033[42mRegular Student\033[0m\n\t\t*Difficulty: Easy\n\t\t*3 period schedule\n\t\t*3 credits required to graduate\n";
 	String[] student = {a,b,c};
 	
 	int numStudent = choose(student);
