@@ -129,15 +129,19 @@ public class Solitaire implements Game {
     
     //returns the card that has been delt
     public Card topCard() {
-	return _deck.get( _currentPos );
+	if (_deck.size() > 0)
+	    return _deck.get( _currentPos );
+	else return null;
     }
     
     //deals one card, putting the prevously delt card back at the "bottom" of the deck
     public void dealCard() {
-	topCard().flip();
-	_currentPos++;
-	if (_currentPos == _deck.size() ) _currentPos = 0;
-	topCard().flip();
+	if ( _deck.size() > 0 ){
+	    topCard().flip();
+	    _currentPos++;
+	    if (_currentPos == _deck.size() ) _currentPos = 0;
+	    topCard().flip();
+	}
 	
     }
     
@@ -206,7 +210,7 @@ public class Solitaire implements Game {
     public boolean isValidMove(int[] choice, int dest) {
 	Card origin;
 	Card destination;
-	if (choice[0] == -1) origin = _deck.get(_currentPos);
+	if (choice[0] == -1) origin = topCard();
 	else if (choice[0] < 4) return false;/*{
 	    if (choice[1] < _final.get( choice[0] ).size() - 1) return false;
 	    else origin = _final.get( choice[0] ).get( choice[1] );
@@ -259,13 +263,13 @@ public class Solitaire implements Game {
 		
 	    }
 	    else{ //comeing from the delt card
-		_final.get(dest).add(_deck.get(_currentPos));
+		_final.get(dest).add( topCard() );
 		_deck.remove(_currentPos);
 
 		if (_currentPos == 0) _currentPos = _deck.size() - 1;
 		else _currentPos--;//to go back to the prevous card
 
-		_deck.get(_currentPos).flip();
+		topCard().flip();
 	    }
 	    
 	}
@@ -295,13 +299,13 @@ public class Solitaire implements Game {
 
 	    }
 	    else{ //comeing from the delt card
-		_piles.get(dest - 4).add(_deck.get(_currentPos));
+		_piles.get(dest - 4).add( topCard() );
 		_deck.remove(_currentPos);
 
 		if (_currentPos == 0) _currentPos = _deck.size() - 1;
 		else _currentPos--;//to go back to the prevous card
 
-		_deck.get(_currentPos).flip();
+		topCard().flip();
 	    }
 	}
     }
@@ -353,7 +357,7 @@ public class Solitaire implements Game {
 	return true;
     }
     
-    public void playGame() {
+    public int playGame() {
 	boolean test = false;
 	while (! isGameOver() ) {
 	    System.out.println(this);	
@@ -364,17 +368,25 @@ public class Solitaire implements Game {
 	if (!test) {
 	    System.out.println("Defeat");
 	}
-
+	
+	return getScore();
     }
 
-    public static void play() {
+    public int getScore() {
+	int count = 0;
+	for (int i = 0; i < _final.size(); i++) count += _final.get(i).size();
+	return count / 52;
+    }
+
+    
+    public static int play() {
 	Solitaire s = new Solitaire();
-	s.playGame();
+	return s.playGame();
     }
 
     
     public static void main(String[] args) {
-	Solitaire.play();
+	System.out.println( Solitaire.play() );
     }
 
 }//end class Solitaire
