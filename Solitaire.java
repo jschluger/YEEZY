@@ -71,7 +71,8 @@ public class Solitaire implements Game {
 	String s;
 	s = "D:\tDECK\t\t\t0\t1\t2\t3\n";
 	s += "\t" + topCard() + "\t\t\t";
-	
+
+	//final
 	for (int i = 0; i < longestSubArrayList(_final); i++) {
 	    //for each ArrayList<Card> in _final
 	    for (int j = 0; j < _final.size(); j++) {
@@ -81,6 +82,14 @@ public class Solitaire implements Game {
 	    
 	    s += "\n\t\t\t\t";
 	}
+
+	//commands
+	s += "\n\t\t\t\t\t\t\t\tSpecial Commands:";
+	s += "\n\t\t\t\t\t\t\t\tD -- deal";
+	s += "\n\t\t\t\t\t\t\t\tM -- magic!";
+	s += "\n\t\t\t\t\t\t\t\tE -- exit";
+	
+	//piles
 	s += "\n\n4\t5\t6\t7\t8\t9\t10\n";
 	for (int i = 0; i < longestSubArrayList(_piles); i++) {
 	    //for each ArrayList<Card> in _final
@@ -117,7 +126,7 @@ public class Solitaire implements Game {
     }
 
     
-
+    
     //returns the card that has been delt
     public Card topCard() {
 	return _deck.get( _currentPos );
@@ -139,7 +148,7 @@ public class Solitaire implements Game {
 	int[] empty = new int[0];
 	System.out.print("Pick up card ...: ");
 	String target = Keyboard.readString();
-	if (target.equals("exit")) {
+	if (target.equals("E")) {
 	    return empty;
 	}
 	else if (target.equals("D")) {
@@ -355,6 +364,7 @@ public class Solitaire implements Game {
 	if (!test) {
 	    System.out.println("Defeat");
 	}
+
     }
 
     public static void play() {
