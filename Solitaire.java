@@ -20,6 +20,7 @@ public class Solitaire implements Game {
     //where in the deck you are, points to the card from the deck being delt
     int _currentPos;
 
+    int _magicUsed;
     
     //constructor
     public Solitaire() {
@@ -52,6 +53,8 @@ public class Solitaire implements Game {
 	}
 	_currentPos = 0;
 	topCard().flip();
+	
+	_magicUsed = 0;
     }
     
     //randomly rearrange elements of an ArrayList
@@ -86,7 +89,7 @@ public class Solitaire implements Game {
 	//commands
 	s += "\n\t\t\t\t\t\t\t\tSpecial Commands:";
 	s += "\n\t\t\t\t\t\t\t\tD -- deal";
-	s += "\n\t\t\t\t\t\t\t\tM -- magic!";
+	s += "\n\t\t\t\t\t\t\t\tM -- magic! (" + (3 - _magicUsed) + " remaining)";
 	s += "\n\t\t\t\t\t\t\t\tE -- exit";
 	
 	//piles
@@ -323,22 +326,24 @@ public class Solitaire implements Game {
     //magic -- swaps cards in the deck for cards that are face down in the piles,
     //so that if there are no more moves the user can keep playing
     public void magic() {
-	for (int i = 0; i < _deck.size(); i++) {
-	    int r = 0; int c = 0;
-	    boolean b = false;
-	    for (r = 0; r < _piles.size(); r++)
-		for (c = 0; c < _piles.get(r).size(); c++)
-		    if (! _piles.get(r).get(c).getFaceUp()) {
-			b = true;
-			break;
-		    }
-	    if (b) break;
-	    _deck.set(i,_piles.get(r).set(c, _deck.get(i)) );
+	if ( _magicUsed < 3 ) {
+	    for (int i = 0; i < _deck.size(); i++) {
+		int r = 0; int c = 0;
+		boolean b = false;
+		for (r = 0; r < _piles.size(); r++)
+		    for (c = 0; c < _piles.get(r).size(); c++)
+			if (! _piles.get(r).get(c).getFaceUp()) {
+			    b = true;
+			    break;
+			}
+		if (b) break;
+		_deck.set(i,_piles.get(r).set(c, _deck.get(i)) );
+	    }
+	    _magicUsed++;
 	}
-	
     }
-
-
+    
+    
     //picks where you will move a chosen card too and moves it there
     //first checking if it is a valid move
     public boolean playTurn() {
@@ -356,8 +361,14 @@ public class Solitaire implements Game {
 	}
 	return true;
     }
+
+    public void displayInstructions() {
+	System.out.println("\nWelcom to Solitaire! The fun card game play solo! To play, type in the name of a card, and then choose where to place it. Remeber that on the regular piles (on the bottom of the screen) the cards must be placed in descending order, and alternating color. To win, move the cards to the piles in the top right, where the cards must be placed in ascending order, and grouped by suit.\n\nThere are some special commands which you should know\n\t*Press D to deal a new card from the deck\n\t*Press E to give up and exit the game\n\t*Press M for Magic! Use this if you are stuck to shuffle some cards around in the deck, hopefully allowing for some new moves. You can use this up to 3 times\n\nYour score will depend on how many cards you get to their final position, in the piles in the top right. The maximum number points possible is 4. Note: Each time you use  Magic! you will lose one point from your total score\n\nGood luck!");
+    }
+
     
     public int playGame() {
+	displayInstructions();
 	boolean test = false;
 	while (! isGameOver() ) {
 	    System.out.println(this);	

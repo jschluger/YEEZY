@@ -24,22 +24,30 @@ public class P5 extends Period {
 	System.out.println("\nYou: I have a suggestion! I think we should...");
 	c1 = Stuy.choose( new String[] {s1,s2} );
 
+	if (c1 == 1) {
+	    System.out.println("\nMr. Sterr: What game do you think will help us prove this theorem?");
 
+	    System.out.println("\nYou: Ummmmmmm");
+	    pause();
+	    System.out.println("You: We could play solitaire!");
 
+	    System.out.println("\nMr. Sterr: I do not think that will help us.");
+	    System.out.println("\nYou: Hmmmmmm");
+	}
+	else if (c1 == 2) {
+	    System.out.println("\nMr. Sterr: That is a very rude thing to say. Please stop distracting the class");
 
+	    System.out.println("You: Is there anything I can do other than prove this theorem?");
+	}
+	
+	System.out.println("\nMr. Sterr: If you are only going to disrupt the class, why don't you just go sit in the corner and play a game of solitaire quietly. I will grade you based on how you do");
 
-
-
-
-
-
-
-
-
-
-
-
-
+	System.out.println("\nYou: Sure thing!");
+	
+	int score;
+	score = Solitaire.play();
+	
+	
 
 
 
