@@ -327,21 +327,21 @@ public class Solitaire implements Game {
     //so that if there are no more moves the user can keep playing
     public void magic() {
 	if ( _magicUsed < 3 ) {
-	    for (int i = 0; i < _deck.size(); i++) {
-		int r = 0; int c = 0;
-		boolean b = false;
-		for (r = 0; r < _piles.size(); r++)
-		    for (c = 0; c < _piles.get(r).size(); c++)
-			if (! _piles.get(r).get(c).getFaceUp()) {
-			    b = true;
-			    break;
-			}
-		if (b) break;
-		_deck.set(i,_piles.get(r).set(c, _deck.get(i)) );
-	    }
-	    _magicUsed++;
+	    int i = 0;
+	    
+	    for (int r = 0; r < _piles.size(); r++)
+		for (int c = 0; c < _piles.get(r).size(); c++)
+		    if ( ! _piles.get(r).get(c).getFaceUp() ) {
+			topCard().flip();
+			_deck.set(i, _piles.get(r).set(c, _deck.get(i)) );
+			topCard().flip();
+			i++;
+			if (i >= _deck.size()) return;
+		    }
+	    _magicUsed++;    
 	}
     }
+
     
     
     //picks where you will move a chosen card too and moves it there
