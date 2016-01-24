@@ -2,7 +2,6 @@
   class RegStudent extends Character                                                                        
   ====================================*/
 
-import cs1.Keyboard;
 import java.util.ArrayList;
 
 

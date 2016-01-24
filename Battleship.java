@@ -69,7 +69,7 @@ public class Battleship implements Game {
     }
 
     // for UX
-    public void displayInstructions() {
+    public static void displayInstructions() {
         System.out.println("Welcome to BATTLESHIP, where you will try to sink my sole battleship in this vast ocean! Be strategic and make wise decisions, or else fail miserably!\n");
 	System.out.println("Your goal is to sink my battleship. Enter integer values for the row and column you think my battleship is located in. You only have a set amount of turns, so be careful!\n");
 	System.out.println("Try not to go out of boundaries or choose the same location!\n\nX: Marks missed spot\n\nO: Battleship location\n");
@@ -94,7 +94,6 @@ public class Battleship implements Game {
     // play a game of Battleship in a nonstatic context
     //true if you win, false if you lose
     public boolean playGame() {
-	displayInstructions();
 	System.out.print(_board);
 	while (_numTurns > 0) {
 	    System.out.println("Remaining Turns: " + _numTurns + "\n");
@@ -121,6 +120,7 @@ public class Battleship implements Game {
 	// allow for user input of size of ocean
 	boolean passed = false;
 	int s = 5;
+	displayInstructions();
 	System.out.print("Please enter the width of the ocean within 5 - 10 units, inclusive: ");
 	while (!passed) { // continue to try until size within specified boundaries
 	    s = Keyboard.readInt();
