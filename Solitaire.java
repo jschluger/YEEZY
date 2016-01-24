@@ -12,15 +12,15 @@ public class Solitaire implements Game {
     
     //instance vars
     //the deck of cards not yet used
-    ArrayList<Card> _deck = new ArrayList<Card>();
+    private ArrayList<Card> _deck = new ArrayList<Card>();
     //the piles of cards that you usually play with
-    ArrayList<ArrayList <Card> > _piles = new ArrayList<ArrayList <Card> >();
+    private ArrayList<ArrayList <Card> > _piles = new ArrayList<ArrayList <Card> >();
     //the place where you finish the game (starting with aces)
-    ArrayList<ArrayList <Card> > _final = new ArrayList<ArrayList <Card> >();
+    private ArrayList<ArrayList <Card> > _final = new ArrayList<ArrayList <Card> >();
     //where in the deck you are, points to the card from the deck being delt
-    int _currentPos;
+    private int _currentPos;
 
-    int _magicUsed;
+    private int _magicUsed;
     
     //constructor
     public Solitaire() {
@@ -332,11 +332,14 @@ public class Solitaire implements Game {
 	    for (int r = 0; r < _piles.size(); r++)
 		for (int c = 0; c < _piles.get(r).size(); c++)
 		    if ( ! _piles.get(r).get(c).getFaceUp() ) {
+			if (i >= _deck.size()){
+			    _magicUsed++;
+			    return;
+			}
 			topCard().flip();
 			_deck.set(i, _piles.get(r).set(c, _deck.get(i)) );
 			topCard().flip();
 			i++;
-			if (i >= _deck.size()) return;
 		    }
 	    _magicUsed++;    
 	}
