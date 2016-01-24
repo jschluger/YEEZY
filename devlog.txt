@@ -16,7 +16,10 @@ Jack and Manish's . . .
 2016-01-24: COMPLETE
 
 Jack: 
-*
+*Wrote P7
+*Fixed Solitaire completly, and finally played a full game and won without it breaking
+*Testing, Testing, Testing, also Testing
+*lots of small bug fixes
 
 Manish: 
 *fixed formatting in Battleship
@@ -27,7 +30,9 @@ Manish:
 2016-01-23:
 
 Jack: 
-*
+*Wrote P5
+*Changed KenKen to an easier board, so that it will be more fun to play
+*Fixed bugs
 
 Manish: 
 *finished P6 class and started working on correct algo for AI in Connect4
@@ -37,7 +42,7 @@ Manish:
 2016-01-22:
 
 Jack: 
-*
+*It was friday, so I made up for the sleep I hade neglected over the past week
 
 Manish: 
 *played around with ASCII art, but realized much of it was not needed
@@ -47,7 +52,8 @@ Manish:
 2016-01-21:
 
 Jack: 
-*
+*Finished P4
+*Experemented (unsuccesfully) with colors in the terminal
 
 Manish: 
 *Added descriptions for characters (still need to add actual credits)
