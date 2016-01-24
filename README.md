@@ -17,6 +17,7 @@ $ java Stuy
 To play a specific mini-game from within the entire game:  
 $ javac *.java  
 $ java *game*  
+
 Where *game* can be:  
       TicTacToe  
       Connect4  
