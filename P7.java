@@ -56,7 +56,7 @@ public class P7 extends Period {
 	}
 	System.out.println("\nMr. Brown: Lets look at some of the guidelines first: ");
 
-	System.out.println("\n*board*\nGuidelines:\n\t*Solidify: Use this project as an opportunity to revisit concepts you struggled with during the term.\n\t*Showcase: Your project should incorporate each major topic/tool we’ve covered this term in an integral manner.\n\t*Stretch: Ideally, your project should also be a chance to explore something new, to teach yourself a thing or two that we have not covered this term. First 2 S's take precedence.\n\t*Your project should take the grader (yours truly) at least 10 minutes to 'digest.'\n\t*Graphics? What graphics? Ain't nobody got time for that.");
+	System.out.println("\n*board*\nGuidelines:\n\t*Solidify: Use this project as an opportunity to revisit concepts you struggled with during the term.\n\t*Showcase: Your project should incorporate each major topic/tool we've covered this term in an integral manner.\n\t*Stretch: Ideally, your project should also be a chance to explore something new, to teach yourself a thing or two that we have not covered this term. First 2 S's take precedence.\n\t*Your project should take the grader (yours truly) at least 10 minutes to 'digest.'\n\t*Graphics? What graphics? Ain't nobody got time for that.");
 
 	System.out.println("\n*thinking*");
 	pause();
