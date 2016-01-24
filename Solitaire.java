@@ -177,7 +177,7 @@ public class Solitaire implements Game {
 
 
     public int[] linSearch(String target) {
-	if ( target.equals(topCard().toString()) ) return new int[] {-1, _currentPos};
+	if ( _deck.size() > 0 && target.equals(topCard().toString()) ) return new int[] {-1, _currentPos};
 
 	for (int r = 0; r < _final.size(); r++) {
 	    for (int c = 0; c < _final.get(r).size(); c++){
