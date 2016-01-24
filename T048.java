@@ -257,16 +257,16 @@ public class T048 implements Game{
       plays one turn of 2048
       ====================================*/
      public void playTurn(){
-	String s = Keyboard.readString();
-	if ( s.equals("w") && swipeU() ) addNewTile();
-	else if ( s.equals("a") && swipeL() ) addNewTile();
-	else if ( s.equals("s") && swipeD() ) addNewTile();
-	else if ( s.equals("d") && swipeR() ) addNewTile();
-	else return;//if the input is not w a s or d, do nothing
-	System.out.println("\n" + _board);
-    }
-    
-    
+	 String s = Keyboard.readString();
+	 if ( s.equals("w") && swipeU() ) addNewTile();
+	 else if ( s.equals("a") && swipeL() ) addNewTile();
+	 else if ( s.equals("s") && swipeD() ) addNewTile();
+	 else if ( s.equals("d") && swipeR() ) addNewTile();
+	 else return;//if the input is not w a s or d, do nothing
+	 //System.out.println("\n" + _board);
+	 System.out.println(_board);
+     }
+
     public boolean isGameOver() {
 	return _board.contains(2048) || noMoves();
     }

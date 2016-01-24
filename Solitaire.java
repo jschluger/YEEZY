@@ -391,7 +391,9 @@ public class Solitaire implements Game {
     public int getScore() {
 	double count = 0.0;
 	for (int i = 0; i < _final.size(); i++) count += _final.get(i).size();
-	return (int)( count / 52.0 * 4.0) - _magicUsed;
+	int score = (int)( count / 52.0 * 4.0) - _magicUsed;
+	if (score < 0) return 0;
+	else return score;
     }
 
     
