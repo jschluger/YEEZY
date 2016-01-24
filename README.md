@@ -11,7 +11,7 @@ $ java Stuy
 How to play (expanded version):
 
 To play the entire game:
-$ javac *.java\n
+$ javac *.java
 $ java Stuy
 
 To play a specific mini-game from within the entire game:
