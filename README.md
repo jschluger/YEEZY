@@ -3,39 +3,39 @@ by Team YEEZY: Manish Saha, Jack Schluger
 
 
 *******
-How to play (condensed version):
-$ javac *.java__
-$ java Stuy__
+How to play (condensed version):  
+$ javac *.java  
+$ java Stuy  
 
 ******
-How to play (expanded version):
+How to play (expanded version):  
 
-To play the entire game:
-$ javac *.java__
-$ java Stuy__
+To play the entire game:  
+$ javac *.java    
+$ java Stuy  
 
-To play a specific mini-game from within the entire game:__
-$ javac *.java__
-$ java <game>__
-Where <game> can be:__
-      TicTacToe__
-      Connect4__
-      KenKen__
-      Solitaire__
-      BattleShip__
-      T048 (2048)__
+To play a specific mini-game from within the entire game:  
+$ javac *.java  
+$ java <game>  
+Where <game> can be:  
+      TicTacToe  
+      Connect4  
+      KenKen  
+      Solitaire  
+      BattleShip  
+      T048 (2048)  
 
-To play a specific period from the game:__
-$ javac *.java__
-$ java <period>__
-Where <period> can be:__
-      P1__
-      P2__
-      P3__
-      P4__
-      P5__
-      P6__
-      P7__
+To play a specific period from the game:  
+$ javac *.java  
+$ java <period>  
+Where <period> can be:  
+      P1  
+      P2  
+      P3  
+      P4  
+      P5  
+      P6  
+      P7  
 ******
 
 
