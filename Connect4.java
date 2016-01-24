@@ -179,6 +179,7 @@ public class Connect4 implements Game {
     public static int comAI(int col, int range) {
 	int offset = (int)(Math.random() * range); // +[0,2]
 	int newCol = (col + offset) % 8;
+	return newCol;
     }
 	
 
