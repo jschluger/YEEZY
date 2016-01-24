@@ -1,7 +1,7 @@
 /*====================================                                     
-  class KenKen -- implenemts the game KenKen as found in newspapers everywhere
+  class KenKen -- implements the game KenKen as found in newspapers everywhere
 
-  implements the game interface
+  implements the Game interface
   
   ====================================*/
 

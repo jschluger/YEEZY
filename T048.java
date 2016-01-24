@@ -1,7 +1,7 @@
 /*====================================                                     
   class T048 --  implements the game 2048
   
-  implements the game interface
+  implements the Game interface
   uses Board as data type
   ====================================*/
 
