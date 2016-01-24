@@ -57,7 +57,36 @@ public class P7 extends Period {
 	System.out.println("\nMr. Brown: Lets look at some of the guidelines first: ");
 
 	System.out.println("\n*board*\nGuidelines:\n\t*Solidify: Use this project as an opportunity to revisit concepts you struggled with during the term.\n\t*Showcase: Your project should incorporate each major topic/tool we’ve covered this term in an integral manner.\n\t*Stretch: Ideally, your project should also be a chance to explore something new, to teach yourself a thing or two that we have not covered this term. First 2 S’s take precedence.\n\t*Your project should take the grader (yours truly) at least 10 minutes to “digest.”\n\t*Graphics? What graphics? Ain't nobody got time for that.");
-	
+
+	System.out.println("\n*thinking*");
+	pause();
+	if (c2 == 1) {
+	    System.out.println("\nYou: This seems harder than I first thought.");
+	}
+	else if (c2 == 2) {
+	    System.out.println("\nYou: This seems even harder than I thought! Theres no way I will be able to do this by tomorrow morning!");
+	}
+
+	System.out.println("\nMr. Brown: There is one other option. I usually don't like to resort to this, but I would rather see you do a good job on this than hand in a bad final project. ");
+
+	System.out.println("\nHow do you respond?");
+	s1 = "What is the other option?";
+	s2 = "But what about our final projects?";
+	c3 = Stuy.choose( new String[] {s1,s2} );
+	if (c3 == 1) {
+
+	}
+	else if (c3 == 2) {
+	    System.out.println("\nMr. Brown: Don't wory about it");
+	    System.out.println("\nYou: If you say so. What is the other option?");
+	}
+
+	System.out.println("\nMr. Brown: Instead of a final project, I will grade you based on how well you can play the game 2048. Good luck");
+
+	System.out.println("\nYou: I accept!");
+
+	int score;
+	score = T048.play();
 
 
 
@@ -66,23 +95,7 @@ public class P7 extends Period {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	return 0;
+	return score;
     }//end scenario()
 
     public static void main(String[] args){
