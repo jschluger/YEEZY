@@ -47,15 +47,23 @@ public class P5 extends Period {
 	int score;
 	score = Solitaire.play();
 	
+	if (score == 0) {
+	    System.out.println("\nMr. Sterr: Hmm, you seem to have doon pretty poorly. Maybe you should have just payed attention to the class like everyone else. You get 0 credits for this class.");
+	}
+	else if (score == 1) {
+	    System.out.println("\nMr. Sterr: Hmm, you didn't do so well. Maybe if you study solitaire you can improve one day. You get 1 credit for this class.");
+	}
+	else if (score == 2) {
+	    System.out.println("\nMr. Sterr: You made it half way there. Maybe solitaire is not for you. Stick to math. You get 2 credits for this class.");
+	}
+	else if (score == 3) {
+	    System.out.println("\nMr. Sterr: Almost a perfect game. Mabye solitaire is a good choice for your future. You get 3 credits for this class.");
+	}
+	else if (score == 4) {
+	    System.out.println("\nMr. Sterr: Well, you won the game. Even if you are bad at math, at least you are good at solitaire. You get 4 credits for this class.");
+	}
 	
-
-
-
-
-
-
-
-	return 0;
+	return score;
     }//end scenario
 
     public static void main(String[] args) {
