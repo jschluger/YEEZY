@@ -1,5 +1,5 @@
 /*==================================== 
-  class Card --  creates a card to be used in Solitiare or other card games
+  class Card --  creates a card to be used in Solitaire or other card games
 
   ====================================*/
 

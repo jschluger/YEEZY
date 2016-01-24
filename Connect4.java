@@ -233,7 +233,7 @@ public class Connect4 implements Game {
 	
 	// ======= COM TURN =======
 	System.out.println("COM thinking...\n");
-	_col = comAI(_col,3); // between user's col and 2 cols after that
+	_col = comAI(_col,2); // between user's col and 2 cols after that
 
 	// similarly verify input
 	while (!checkC()) { // if no space in the range
