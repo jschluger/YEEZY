@@ -25,8 +25,8 @@ public class P2 extends Period {
 
 	
 	if (c1 == 1) {
-	    System.out.println("\nYou make it to class 15 minutes early (despite passing being only 5 minutes long), but completly out of breath. As you enter your physics lab you are gasping so hard for air that you accidently knock over the lab setup, ruining the lab!");
-	    System.out.println("\nMr. Wang(Physics Teacher): Why did you knock over the lab setup?");
+	    System.out.println("\nYou make it to class 15 minutes early (despite passing being only 5 minutes long), but completely out of breath. As you enter your physics lab you are gasping so hard for air that you accidentally knock over the lab setup, ruining the lab!");
+	    System.out.println("\nMr. Wang: Why did you knock over the lab setup?");
 	    System.out.println("\n*thinking* hmmm. What should I do?");
 	    s1 = "Vow never to take the stairs again";
 	    s2 = "Use your accumulated physics knowledge to rebuild the lab";
@@ -34,16 +34,16 @@ public class P2 extends Period {
 
 	    c2 = Stuy.choose( new String[] {s1,s2,s3} );
 	    while (c2 == 2) {
-		System.out.println("\nYou immediatly fail, because you have no physics knowledge.\n\nMr Wang: Minus one!\n\nPick again: ");
+		System.out.println("\nYou immediately fail, because you have no physics knowledge.\n\nMr Wang: Minus one!\n\nPick again: ");
 		c2 = Stuy.choose( new String[] {s1,s2,s3} );
 	    }
 	    if (c2 == 1) {
-		System.out.println("\nYou: The reason I have broken the lab is because I was completly winded from taking the stairs all the way from the 5th floor. I vow never to take the stairs again, for as long as I attend Stuyvesant High School!");
+		System.out.println("\nYou: The reason I have broken the lab is because I was completely winded from taking the stairs all the way from the 5th floor. I vow never to take the stairs again, for as long as I attend Stuyvesant High School!");
 		System.out.println("\nMr. Wang: Minus one!");
 		
 	    }
 	    else if (c2 == 3) {
-		System.out.println("\nYou: I am so sorry for breaking the lab Mr. Wang. I promise to master the art of physics in honor of this broken lab, that I have destroyed. Please accept my appology");
+		System.out.println("\nYou: I am so sorry for breaking the lab Mr. Wang. I promise to master the art of physics in honor of this broken lab that I have destroyed. Please accept my apology");
 		System.out.println("\nMr. Wang: Minus one!");
 	    }
 
@@ -90,7 +90,7 @@ public class P2 extends Period {
 	    System.out.println("\nMr. Wang: According to the regents curriculum, connect 4 counts as an offical state physics lab. If you can beat me in a game, you will get credit for today's lab");
 
 	    System.out.println("\nYou: What does this have to do with physics?");
-	    System.out.println("\nMr. Wang: shhh");
+	    System.out.println("\nMr. Wang: shhh\n");
 	    
 	}
        

@@ -13,7 +13,7 @@ public class P7 extends Period {
 
 	System.out.println("\nYou sprint down the stairs and into the hidden hallway to find room 251, your CS class. You sit down quietly at your desk and look up at the board: ");
 	
-	System.out.println("\n*Board*\n\tAim: Reflect, look ahead\n\tDN: Think about a potental final project.");
+	System.out.println("\n*Board*\n\tAim: Reflect, look ahead\n\tDN: Think about a potential final project.");
 
 
 	String s1,s2,s3,s4,s5,s6;
@@ -64,7 +64,7 @@ public class P7 extends Period {
 	    System.out.println("\nYou: This seems harder than I first thought.");
 	}
 	else if (c2 == 2) {
-	    System.out.println("\nYou: This seems even harder than I thought! Theres no way I will be able to do this by tomorrow morning!");
+	    System.out.println("\nYou: This seems even harder than I thought! There's no way I will be able to do this by tomorrow morning!");
 	}
 
 	System.out.println("\nMr. Brown: There is one other option. I usually don't like to resort to this, but I would rather see you do a good job on this than hand in a bad final project. ");

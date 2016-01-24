@@ -24,7 +24,7 @@ public class P1 extends Period {
 	    System.out.println("\nSenior Simon: Minus 50 points from your next test! No sleep ever!");
 	}
 	
-	System.out.println("\n... Exausted from running up the stairs all the way to the fifth floor, you become drowsy. What do you do?");
+	System.out.println("\n... Exhausted from running up the stairs all the way to the fifth floor, you become drowsy. What do you do?");
 	s1 = "Take a nap.";
 	s2 = "Raise your hand to stay awake";
 	int c2 = Stuy.choose( new String[] {s1,s2} ); 
@@ -42,7 +42,7 @@ public class P1 extends Period {
 	    c3 = Stuy.choose( new String[] {s1,s2} );
 
 	    if (c3 == 1) {
-		System.out.println("\nSenor Simon: Why don't you come up to the board and play a game of TicTacToe to redeem your self. If you beat me, you can pass this class. If I win, you fail.\n");
+		System.out.println("\nSenor Simon: Why don't you come up to the board and play a game of TicTacToe to redeem yourself. If you beat me, you can pass this class. If I win, you fail.\n");
 	    }
 	    else if (c3 == 2) {
 		System.out.println("\nSenor Simon: No sleeping chico! Why don't you come up to the board and play a game of TicTacToe to stay awake. If you beat me, you can pass this class. If I win, you fail.\n");
