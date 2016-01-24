@@ -17,7 +17,7 @@ Jack and Manish's . . .
 
 Jack: 
 *Wrote P7
-*Fixed Solitaire completly, and finally played a full game and won without it breaking
+*Fixed Solitaire completely, and finally played a full game and won without it breaking
 *Testing, Testing, Testing, also Testing
 *lots of small bug fixes
 
