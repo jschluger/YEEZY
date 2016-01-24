@@ -272,7 +272,8 @@ public class Solitaire implements Game {
 		if (_currentPos == 0) _currentPos = _deck.size() - 1;
 		else _currentPos--;//to go back to the prevous card
 
-		topCard().flip();
+		if (_deck.size() > 0 ) 
+		    topCard().flip();
 	    }
 	    
 	}
@@ -308,7 +309,8 @@ public class Solitaire implements Game {
 		if (_currentPos == 0) _currentPos = _deck.size() - 1;
 		else _currentPos--;//to go back to the prevous card
 
-		topCard().flip();
+		if (_deck.size() > 0)
+		    topCard().flip();
 	    }
 	}
     }
@@ -326,7 +328,7 @@ public class Solitaire implements Game {
     //magic -- swaps cards in the deck for cards that are face down in the piles,
     //so that if there are no more moves the user can keep playing
     public void magic() {
-	if ( _magicUsed < 3 ) {
+	if ( _magicUsed < 3 && _deck.size() > 0) {
 	    int i = 0;
 	    
 	    for (int r = 0; r < _piles.size(); r++)
