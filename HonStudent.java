@@ -14,7 +14,7 @@ public class HonStudent extends RegStudent {
 	_schedule.add( new P4() );
 	_schedule.add( new P5() );
 	_schedule.add( new P6() );
-	//_schedule.add( new P7() );
+	_schedule.add( new P7() );
 	
     }
     
