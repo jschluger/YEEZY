@@ -118,4 +118,8 @@ public class P2 extends Period {
 
     }
     
+    public static void main(String[] args) {
+	Period p = new P2();
+	p.scenario();
+    }
 } // end class P2

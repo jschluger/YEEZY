@@ -64,6 +64,11 @@ public class P1 extends Period {
 	    return 0;//no points earned
 	}
 	
-    } 
+    }
+
+    public static void main(String[] args) {
+	Period p = new P1();
+	p.scenario();
+    }
     
 } // end class Period
