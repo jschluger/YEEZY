@@ -104,7 +104,7 @@ public class P4 extends Period {
 	System.out.println("You have reached the front of the line! What do you want to eat?\n");
 	s1 =  "Baconeggandcheeseavacadochipotleonaroll";
 	s2 = "Combo over rice, no salad";
-	s3 = "Tosted everything bagel with lox spread";
+	s3 = "Toasted everything bagel with lox spread";
 	a2 = new String[] {s1, s2, s3};
 	
 	c3 = Stuy.choose( a2 );

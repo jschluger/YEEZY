@@ -15,7 +15,7 @@ public class KenKen implements Game {
     Board _input;
     
     public KenKen() {
-	//programing the board -->
+	//programming the board -->
 	//found in thursday January 14, 2016 New York Times
 	//******* NOTE: CREDIT THIS LATER
 	KEY1 = new Board(4);

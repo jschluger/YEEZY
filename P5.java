@@ -48,7 +48,7 @@ public class P5 extends Period {
 	score = Solitaire.play();
 	
 	if (score == 0) {
-	    System.out.println("\nMr. Sterr: Hmm, you seem to have doon pretty poorly. Maybe you should have just payed attention to the class like everyone else. You get 0 credits for this class.");
+	    System.out.println("\nMr. Sterr: Hmm, you seem to have done pretty poorly. Maybe you should have just paid attention to the class like everyone else. You get 0 credits for this class.");
 	}
 	else if (score == 1) {
 	    System.out.println("\nMr. Sterr: Hmm, you didn't do so well. Maybe if you study solitaire you can improve one day. You get 1 credit for this class.");

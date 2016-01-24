@@ -17,7 +17,7 @@ public class Solitaire implements Game {
     private ArrayList<ArrayList <Card> > _piles = new ArrayList<ArrayList <Card> >();
     //the place where you finish the game (starting with aces)
     private ArrayList<ArrayList <Card> > _final = new ArrayList<ArrayList <Card> >();
-    //where in the deck you are, points to the card from the deck being delt
+    //where in the deck you are, points to the card from the deck being dealt
     private int _currentPos;
 
     private int _magicUsed;
@@ -160,7 +160,7 @@ public class Solitaire implements Game {
 	}
 	else if (target.equals("D")) {
 	    dealCard();
-	    System.out.println("\nDELT. PICK AGAIN!! \n");
+	    System.out.println("\nDEALT. PICK AGAIN!! \n");
 	    System.out.println(this);
 	    return pickOrigin();
 	}
@@ -368,7 +368,7 @@ public class Solitaire implements Game {
     }
 
     public void displayInstructions() {
-	System.out.println("\nWelcom to Solitaire! The fun card game play solo! To play, type in the name of a card, and then choose where to place it. Remeber that on the regular piles (on the bottom of the screen) the cards must be placed in descending order, and alternating color. To win, move the cards to the piles in the top right, where the cards must be placed in ascending order, and grouped by suit.\n\nThere are some special commands which you should know\n\t*Press D to deal a new card from the deck\n\t*Press E to give up and exit the game\n\t*Press M for Magic! Use this if you are stuck to shuffle some cards around in the deck, hopefully allowing for some new moves. You can use this up to 3 times\n\nYour score will depend on how many cards you get to their final position, in the piles in the top right. The maximum number points possible is 4. Note: Each time you use  Magic! you will lose one point from your total score\n\nGood luck!");
+	System.out.println("\nWelcom to Solitaire! The fun card game play solo! To play, type in the name of a card, and then choose where to place it. Remeber that on the regular piles (on the bottom of the screen) the cards must be placed in descending order, and alternating color. To win, move the cards to the piles in the top right, where the cards must be placed in ascending order, and grouped by suit.\n\nThere are some special commands which you should know\n\t*Press D to deal a new card from the deck\n\t*Press E to give up and exit the game\n\t*Press M for Magic! Use this if you are stuck to shuffle some cards around in the deck, hopefully allowing for some new moves. You can use this up to 3 times\n\nYour score will depend on how many cards you get to their final position, in the piles in the top right. The maximum number points possible is 4. Note: Each time you use Magic! you will lose one point from your total score\n\nGood luck!");
     }
 
     
