@@ -9,7 +9,7 @@ public class HonStudent extends RegStudent {
     
     public HonStudent() {
 	super();
-	_creditsNeeded += 4;
+	_creditsNeeded += 3;
 
 	_schedule.add( new P4() );
 	_schedule.add( new P5() );
