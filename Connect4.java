@@ -176,9 +176,14 @@ public class Connect4 implements Game {
         return (_board.get(0,_col-1).equals("_")); // check first row to see if empty
     }
 
+    // AI Algo, pretty strong, but users can definitely overcome
     public static int comAI(int col, int range) {
-	int offset = (int)(Math.random() * range); // +[0,2]
+	int offset = (int)(Math.random() * range); // +[0,range)
 	int newCol = (col + offset) % 8;
+	// col can never be 0, but 8 % 8 messes it up
+	if (newCol == 0) {
+	    newCol = 8;
+	}
 	return newCol;
     }
 	
