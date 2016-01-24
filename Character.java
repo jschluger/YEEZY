@@ -43,11 +43,11 @@ public abstract class Character {
     
     //run after all Periods are run, to see if you won or lost the game
     public void endGame() {
-	System.out.println("The final bell rings to end your last day of high school. You reminisce over the frendships you created, and look forward at your bright future...");
+	System.out.println("The final bell rings to end your last day of high school. You reminisce over the frendships you've created, and look forward at your bright future...");
 	Period.pause();
 
 	System.out.println("Later that night, at the graduation ceremony: ");
-	System.out.println("Ms. Zhang: I am proud to announce DJ Khaled as this years guest speaker!");
+	System.out.println("Ms. Zhang: I am proud to announce DJ Khaled as this year's guest speaker!");
 
 	
 	System.out.print("\nDJ Khaled: ");
