@@ -5,10 +5,11 @@ public class Stuy {
     private String _name;
     private Character _player;
 
+    /*
     public Stuy() {
 	//_credits = 0; --> moved to Character
 	//the other 2 instance variables get set later via user input
-    }
+    }*/
     
     public static int choose(String[] a){
 	String s = "";
@@ -79,10 +80,17 @@ public class Stuy {
 	_player.endGame();
 	
     }
-	
+    
     public static void play(){
 	Stuy game = new Stuy();
 	game.playGame();
+
+	String s1 = "Yes";
+	String s2 = "No";
+	System.out.println("\nDo you want to play again?");
+	int c1 = choose( new String[] {s1, s2} );
+
+	if (c1 == 1) play();
     }
 
 

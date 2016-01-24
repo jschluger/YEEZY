@@ -31,7 +31,9 @@ public class P1 extends Period {
 
 	int c3;
 	if (c2 == 1) {
-	    System.out.println("\nYou fall drift off to sleep\n.\n.\n.\n*softly* chico\n\n*louder* Chico\n\n*SCREAMING*CHICO WAKE UP, DO NOT SLEEP IN MY CLASS\n");
+	    System.out.println("\nYou fall drift off to sleep");
+	    pause();
+		System.out.println("*softly*Mr. Simon: chico\n\n*louder*Mr. Simon: Chico\n\n*SCREAMING*Mr. Simon: CHICO WAKE UP, DO NOT SLEEP IN MY CLASS\n");
 
 	    System.out.println("Your response: ");
 	    s1 = "I am so sorry senor. It will never happen again.";
