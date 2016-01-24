@@ -19,22 +19,22 @@ public class KenKen implements Game {
 	//found in thursday January 14, 2016 New York Times
 	//******* NOTE: CREDIT THIS LATER
 	KEY1 = new Board(4);
-	KEY1.set(0,0,1);
-	KEY1.set(0,1,4);
-	KEY1.set(0,2,3);
-	KEY1.set(0,3,2);
+	KEY1.set(0,0,3);
+	KEY1.set(0,1,2);
+	KEY1.set(0,2,1);
+	KEY1.set(0,3,4);
 	KEY1.set(1,0,4);
-	KEY1.set(1,1,3);
-	KEY1.set(1,2,2);
-	KEY1.set(1,3,1);
+	KEY1.set(1,1,1);
+	KEY1.set(1,2,3);
+	KEY1.set(1,3,2);
 	KEY1.set(2,0,2);
-	KEY1.set(2,1,1);
+	KEY1.set(2,1,3);
 	KEY1.set(2,2,4);
-	KEY1.set(2,3,3);
-	KEY1.set(3,0,3);
-	KEY1.set(3,1,2);
-	KEY1.set(3,2,1);
-	KEY1.set(3,3,4);
+	KEY1.set(2,3,1);
+	KEY1.set(3,0,1);
+	KEY1.set(3,1,4);
+	KEY1.set(3,2,2);
+	KEY1.set(3,3,3);
 
 	_input = new Board(4);
 	
@@ -42,16 +42,16 @@ public class KenKen implements Game {
     
     //prints out board 1
     public void print1() {
-	String s = " ========= ========= ========= =========\n|12x      .         .         |2/       |\n|         .         .         |         |\n|    ";
+	String s = " ========= ========= ========= =========\n|7+       |8x       .         .         |\n|         |         .         .         |\n|    ";
 	s += show( _input.get(0,0) ); 
-	s += "    .    ";
+	s += "    |    ";
 	s += show( _input.get(0,1) );
 	s += "    .    ";
 	s += show( _input.get(0,2) );
-	s += "    |    ";
+	s += "    .    ";
 	s += show( _input.get(0,3) );
 	
-	s+= "    |\n|         .         .         |         |\n ========= ========= =========|. . . . .|\n|4        |6+       |2/       |         |\n|         |         |         |         |\n|    ";
+	s+= "    |\n|         |         .         .         |\n|. . . . .|============================= \n|         |1        |36x      |2/       |\n|         |         |         |         |\n|    ";
 	s += show( _input.get(1,0) ); 
 	s += "    |    ";
 	s += show( _input.get(1,1) );
@@ -60,25 +60,25 @@ public class KenKen implements Game {
 	s += "    |    ";
 	s += show( _input.get(1,3) );
 
-	s+= "    |\n|         |         |         |         |\n =========|. . . . .|. . . . . =========\n|1-       |         |         |8+       |\n|         |         |         |         |\n|    ";
+	s+= "    |\n|         |         |         |         |\n ========= ========= . . . . .|. . . . .|\n|2        |         .         |         |\n|         |         .         |         |\n|    ";
 	s += show( _input.get(2,0) ); 
 	s += "    |    ";
 	s += show( _input.get(2,1) );
-	s += "    |    ";
+	s += "    .    ";
 	s += show( _input.get(2,2) );
 	s += "    |    ";
 	s += show( _input.get(2,3) );
 
-	s+= "    |\n|         |         |         |         |\n|. . . . .|. . . . .|========= . . . . .|\n|         |         |         .         |\n|         |         |         .         |\n|    ";
+	s+= "    |\n|         |         .         |         |\n =================== =================== \n|3-       .         |1-       .         |\n|         .         |         .         |\n|    ";
 	s += show( _input.get(3,0) );
-	s += "    |    ";
+	s += "    .    ";
 	s += show( _input.get(3,1) );
 	s += "    |    ";
 	s += show( _input.get(3,2) );
 	s += "    .    ";
 	s += show( _input.get(3,3) );
 
-	s+= "    |\n|         |         |         .         |\n ========= ========= ========= =========\n";
+	s+= "    |\n|         .         |         .         |\n ========= ========= ========= =========";
 	
 	System.out.println(s);
     }
