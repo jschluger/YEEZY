@@ -88,13 +88,11 @@ public class P7 extends Period {
 	int score;
 	score = T048.play();
 
-
-
-
-
-
-
-
+	if (score == 0) System.out.println("\nMr. Brown: What a shame. You seem to have failed. 0 credits for you.");
+	if (score == 1) System.out.println("\nMr. Brown: You did alright. You get 1 credit.");
+	if (score == 2) System.out.println("\nMr. Brown: You almost made it. You get 2 credits.");
+	if (score == 3) System.out.println("\nMr. Brown: Well, now I know that you are a champion at 2048. Those skills probably transfer over to CS. You get 3 credits.");
+	
 	return score;
     }//end scenario()
 
