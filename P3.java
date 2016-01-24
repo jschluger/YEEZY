@@ -19,8 +19,9 @@ public class P3 extends Period {
 	
 	int c1 = Stuy.choose( new String[] {s1,s2} );
 	
-	int c2, c4;
+	int c2;
 	int c3 = 0;
+	int c4;
 
        
 	if (c1 == 1) {
@@ -84,25 +85,29 @@ public class P3 extends Period {
 		}
 	    }
 	}
-       
+
+	// ready to play, same point
+	
 	if ( KenKen.play() ) {
-	    if (c1 == 1 || c3 == 1) {
-		if (c1 == 1) {
-		    System.out.println("\nMr. Galano: Great work! Look! You're not thirsty anymore! Now you are marked prepared!");
-		}
-		else {
-		    System.out.println("\nMr. Galano: Terrific! You get one credit for attending class and you look like you have overcome your fatigue!");
-		}
+	    // individual responses
+
+	    if (c1 == 1) {
+		System.out.println("\nMr. Galano: Great work! Look! You're not thirsty anymore! Now you are marked prepared!");
 	    }
+	    else if (c3 == 1) {
+		System.out.println("\nMr. Galano: Terrific! You get one credit for attending class and you look like you have overcome your fatigue!");
+	    }
+	
 	    else {
 		System.out.println("\nNurse: Time to get you checked up! And don't worry, I told Mr. Galano to give you a credit for attending class already!");
 	    }
 
 	    return _maxCredits;
 	}
+	// game lost
 	else {
 
-	    if (c1 == 1 || c3 == 3) {
+	    if (c1 == 1 || c3 == 1) {
 		System.out.println("\nMr. Galano: Failure! Seems like you're failing PE...");
 	    }
 	    else {
