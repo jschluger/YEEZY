@@ -173,17 +173,14 @@ public class Connect4 implements Game {
     
     // avoid text output if computer player is choosing column
     public boolean checkC() { 
-	// make sure in boundaries
-	if (! ((_col - 1) >= 0 && (_col - 1) < 8) ) {
-	    return false;
-	}
-
-	else if (!_board.get(0,_col-1).equals("_")) { // check first row to see if empty
-	    return false;
-	}
-
-	return true;
+        return (_board.get(0,_col-1).equals("_")); // check first row to see if empty
     }
+
+    public static int comAI(int col, int range) {
+	int offset = (int)(Math.random() * range); // +[0,2]
+	int newCol = (col + offset) % 8;
+    }
+	
 
     // drops piece at the first free space in the column
     public void dropPiece(String piece) {
@@ -230,11 +227,11 @@ public class Connect4 implements Game {
 	
 	// ======= COM TURN =======
 	System.out.println("COM thinking...\n");
-	_col = (int)(Math.random() * 8) + 1; // [1,8]
+	_col = comAI(_col,3); // between user's col and 2 cols after that
 
 	// similarly verify input
-	while (!checkC()) {
-	    _col = (int)(Math.random() * 8) + 1;
+	while (!checkC()) { // if no space in the range
+	    _col = (int)(Math.random() * 8) + 1; // pure randomness
 	}
 	       
 	try {
