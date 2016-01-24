@@ -13,7 +13,38 @@ Jack and Manish's . . .
                                               \______/ 
 
 =========================================================
-2016-01-20:
+2016-01-24: COMPLETE
+
+Jack: 
+*
+
+Manish: 
+*fixed formatting in Battleship
+*completed AI algo
+*test runs, test runs, test runs
+
+=========================================================
+2016-01-23:
+
+Jack: 
+*
+
+Manish: 
+*finished P6 class and started working on correct algo for AI in Connect4
+*still did not choose which algo was perfect
+
+=========================================================
+2016-01-22:
+
+Jack: 
+*
+
+Manish: 
+*played around with ASCII art, but realized much of it was not needed
+*started to write P6 class
+
+=========================================================
+2016-01-21:
 
 Jack: 
 *
