@@ -37,9 +37,8 @@ Where *period* can be:
 - P5  
 - P6  
 - P7  
-******
 
-
+*****
 A game with a plot based on a day in Stuy: It is the last day of classes of senior year, and you still have to earn a certain number of credits to graduate. The game is a RPG, with mini games incorporated throughout the day to earn your last credits, graduate, and win the game.
 
 Special thanks to Mr. Brown
