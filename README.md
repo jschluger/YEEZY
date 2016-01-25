@@ -4,8 +4,8 @@ by Team YEEZY: Manish Saha, Jack Schluger
 
 *******
 How to play (condensed version):  
-"$ javac *.java"    
-"$ java Stuy"    
+$ javac *.java    
+$ java Stuy    
 
 ******
 How to play (expanded version):  
