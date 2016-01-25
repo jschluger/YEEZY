@@ -4,19 +4,19 @@ by Team YEEZY: Manish Saha, Jack Schluger
 
 *******
 How to play (condensed version):  
-$ javac *.java  
-$ java Stuy  
+"$ javac *.java"    
+"$ java Stuy"    
 
 ******
 How to play (expanded version):  
 
 To play the entire game:  
-$ javac *.java    
-$ java Stuy  
+"$ javac *.java"      
+"$ java Stuy"  
 
 To play a specific mini-game from within the entire game:  
-$ javac *.java  
-$ java *game*  
+"$ javac *.java"  
+"$ java *game*"  
 
 Where *game* can be:  
 - TicTacToe  
@@ -27,8 +27,8 @@ Where *game* can be:
 - T048 (2048)  
 
 To play a specific period from the game:  
-$ javac *.java  
-$ java *period*    
+"$ javac *.java"  
+"$ java *period*"    
 Where *period* can be:  
 - P1  
 - P2  
