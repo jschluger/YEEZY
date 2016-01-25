@@ -28,7 +28,8 @@ Where *game* can be:
 
 To play a specific period from the game:  
 *$ javac *.java*    
-*$ java *period**      
+*$ java *period** 
+
 Where *period* can be:  
 - P1  
 - P2  
