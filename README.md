@@ -19,24 +19,24 @@ $ javac *.java
 $ java *game*  
 
 Where *game* can be:  
-      TicTacToe  
-      Connect4  
-      KenKen  
-      Solitaire  
-      BattleShip  
-      T048 (2048)  
+- TicTacToe  
+- Connect4  
+- KenKen  
+- Solitaire  
+- BattleShip  
+- T048 (2048)  
 
 To play a specific period from the game:  
 $ javac *.java  
 $ java *period*    
 Where *period* can be:  
-      P1  
-      P2  
-      P3  
-      P4  
-      P5  
-      P6  
-      P7  
+- P1  
+- P2  
+- P3  
+- P4  
+- P5  
+- P6  
+- P7  
 ******
 
 
