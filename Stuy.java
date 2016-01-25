@@ -34,8 +34,8 @@ public class Stuy {
     }
 
     public void displayInstructions() {
-	System.out.println("Welcome to \033[46mA DAY IN STUY\033[0m, where you will try to make it through your final day in Stuy and earn enough credits to finally graduate. Bear in mind that failure to win a game will result in no credits earned!");
-	System.out.println("What Character do you want to be?");
+	System.out.println("Welcome to \033[46mA DAY IN STUY\033[0m, a game by team YEEZY: Manish Saha and Jack Schluger. It is the last day of classes at Stuyvesant High School, but you are still missing some credits that you need to graduate. Will you graduate with your class? Or will you fail and have to repeat High School? Will DJ Khaled show up? Play and find out!");
+	System.out.println("\nWhich character do you want to be?");
     }
 
     public void playGame() {
